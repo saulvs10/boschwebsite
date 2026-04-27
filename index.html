@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bosch — Tienda Oficial México</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E10000;--red-d:#B80000;--black:#000;--white:#fff;
+  --g90:#1A1A1A;--g80:#333;--g60:#666;--g40:#999;--g20:#CCC;--g10:#E8E8E8;--g05:#F5F5F5;
+  --blue:#007BC0;--green:#00884A;--teal:#008E9B;--purple:#8B0FAB;
+  --font:'Inter','Helvetica Neue',Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--white);color:var(--g80);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.view{display:none}.view.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.fade-in{animation:fadeUp .3s ease forwards}
+/* ── SUPERGRAPHIC ── */
+.supergraphic{height:4px;background:linear-gradient(90deg,#E10000 0%,#E10000 16%,#C00067 16%,#C00067 30%,#8B0FAB 30%,#8B0FAB 44%,#007BC0 44%,#007BC0 58%,#008E9B 58%,#008E9B 72%,#00884A 72%,#00884A 86%,#7DB928 86%,#7DB928 100%)}
+/* ── HEADER ── */
+.header{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--g10);box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.header-top{background:var(--g90);padding:5px 32px;display:flex;justify-content:flex-end;gap:20px}
+.htop-link{font-size:11px;color:rgba(255,255,255,.55);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .15s}
+.htop-link:hover{color:#fff}
+.header-main{padding:0 32px}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;height:60px;gap:24px}
+/* BOSCH LOGO — correct anchor symbol */
+.bosch-logo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
+.logo-tagline{font-size:10px;color:var(--g40);border-left:1px solid var(--g20);padding-left:10px;line-height:1.4}
+.header-nav{display:flex;flex:1}
+.nav-link{font-size:13px;font-weight:500;color:var(--g80);padding:0 12px;cursor:pointer;background:none;border:none;font-family:var(--font);border-bottom:3px solid transparent;height:60px;display:flex;align-items:center;transition:all .15s;white-space:nowrap}
+.nav-link:hover{color:var(--red);border-bottom-color:var(--red)}
+.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+.btn-nav-assist{display:flex;align-items:center;gap:7px;background:var(--red);color:#fff;border:none;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s;white-space:nowrap}
+.btn-nav-assist:hover{background:var(--red-d)}
+.cart-btn{position:relative;background:var(--g05);border:1px solid var(--g10);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s}
+.cart-btn:hover{background:var(--g10)}
+.cart-badge{position:absolute;top:-5px;right:-5px;background:var(--red);color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+.cart-badge.show{display:flex}
+/* ── BUTTONS ── */
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:#fff;border:none;padding:12px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s;text-decoration:none}
+.btn-primary:hover{background:var(--red-d);transform:translateY(-1px);box-shadow:0 4px 14px rgba(225,0,0,.3)}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--black);border:1.5px solid var(--g20);padding:11px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s}
+.btn-secondary:hover{border-color:var(--g80);background:var(--g05)}
+.btn-outline-red{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--red);border:1.5px solid var(--red);padding:11px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all .15s}
+.btn-outline-red:hover{background:var(--red);color:#fff}
+/* ── HERO — compact ── */
+.hero{background:var(--black);position:relative;overflow:hidden;min-height:340px;display:flex;align-items:center}
+.hero-grid-bg{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 64px),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 64px)}
+.hero-red-bar{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red)}
+.hero-content{max-width:1280px;margin:0 auto;padding:36px 32px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%}
+.hero-eyebrow{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--red)}
+.hero-title{font-size:36px;font-weight:700;color:#fff;line-height:1.08;letter-spacing:-.02em;margin-bottom:12px}
+.hero-title em{color:var(--red);font-style:normal}
+.hero-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;max-width:400px;margin-bottom:24px;font-weight:300}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-hero-main{display:flex;align-items:center;gap:10px;background:var(--red);color:#fff;border:none;padding:14px 26px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font);transition:all .15s;animation:pulse 3s ease infinite}
+.btn-hero-main:hover{background:var(--red-d);box-shadow:0 4px 18px rgba(225,0,0,.4);transform:translateY(-1px);animation:none}
+.hero-scroll-hint{font-size:12px;color:rgba(255,255,255,.35);display:flex;flex-direction:column;align-items:center;gap:4px;position:absolute;bottom:16px;left:50%;transform:translateX(-50%)}
+.hero-scroll-hint svg{animation:bounce 1.5s ease infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+/* hero products */
+.hero-prod-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
+.hero-products{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-prod-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:14px;cursor:pointer;transition:all .2s;border-radius:2px}
+.hero-prod-card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);transform:translateY(-2px)}
+.hero-prod-img{height:90px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;background:rgba(255,255,255,.06);border-radius:2px}
+.hero-prod-cat{font-size:9px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.hero-prod-name{font-size:12px;font-weight:600;color:#ffffff;line-height:1.3;margin-bottom:5px}
+.hero-prod-price{font-size:14px;font-weight:700;color:#E10000}
+/* ── TRUST STRIP ── */
+.trust-strip{border-bottom:1px solid var(--g10)}
+.trust-inner{max-width:1280px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{display:flex;align-items:center;gap:14px;padding:18px 16px;border-right:1px solid var(--g10)}
+.trust-item:last-child{border-right:none}
+.trust-icon-box{width:42px;height:42px;background:linear-gradient(135deg,#fff 0%,var(--g05) 100%);border:1px solid var(--g10);display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:2px}
+.trust-label{font-size:13px;font-weight:700;color:var(--black);line-height:1.3}
+.trust-sub{font-size:10px;color:var(--g40);margin-top:2px}
+/* ── SECTIONS ── */
+.section{max-width:1280px;margin:0 auto;padding:48px 32px}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px}
+.section-title{font-size:24px;font-weight:700;color:var(--black);letter-spacing:-.01em}
+.section-title-red{color:var(--red)}
+.section-link{font-size:13px;font-weight:600;color:var(--red);cursor:pointer;display:flex;align-items:center;gap:4px;text-decoration:none;border:none;background:none;font-family:var(--font)}
+.section-link:hover{text-decoration:underline}
+/* ── CATEGORIES ── */
+.categories-mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--g10);border:1px solid var(--g10)}
+.cat-mega-card{background:#fff;cursor:pointer;transition:all .18s;padding:22px 20px;display:flex;align-items:center;gap:18px}
+.cat-mega-card:hover{background:#fafafa;box-shadow:inset 3px 0 0 var(--red)}
+.cat-mega-card:hover .cat-mega-name{color:var(--red)}
+.cat-mega-img{width:72px;height:72px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:4px}
+.cat-mega-name{font-size:14px;font-weight:600;color:var(--black);transition:color .15s;line-height:1.3}
+.cat-mega-sub{font-size:11px;color:var(--g40);margin-top:3px}
+/* ── PRODUCTS GRID ── */
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--g10)}
+.product-card{background:#fff;cursor:pointer;transition:all .15s;position:relative}
+.product-card:hover{z-index:1;box-shadow:0 0 0 2px var(--red)}
+/* Product image — bigger */
+.product-card-img{height:240px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f2f4f8}
+.product-badge{position:absolute;top:0;left:0;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;z-index:2}
+.badge-black{background:var(--black)}.badge-blue{background:var(--blue)}
+.product-card-body{padding:14px 16px 18px}
+.product-cat-tag{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--g40);margin-bottom:5px}
+.product-name{font-size:13px;font-weight:600;color:var(--black);line-height:1.4;margin-bottom:12px}
+.product-pricing{display:flex;align-items:baseline;gap:7px;margin-bottom:5px}
+.price-current{font-size:20px;font-weight:700;color:var(--black)}
+.price-original{font-size:12px;color:var(--g40);text-decoration:line-through}
+.price-discount{font-size:10px;font-weight:700;color:var(--red);background:rgba(225,0,0,.08);padding:2px 5px}
+.product-avail{font-size:11px;color:var(--green);font-weight:500;display:flex;align-items:center;gap:4px;margin-bottom:12px}
+.product-avail::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%}
+.product-card-cta{width:100%;padding:10px;background:var(--black);color:#fff;border:none;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);transition:background .15s}
+.product-card-cta:hover{background:var(--g80)}
+/* ── CATEGORY PAGE — pill filters instead of sidebar ── */
+.category-page-content{max-width:1280px;margin:0 auto;padding:24px 32px 48px}
+.filter-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;align-items:center}
+.filter-pills-label{font-size:11px;font-weight:700;color:var(--g60);text-transform:uppercase;letter-spacing:.06em;margin-right:4px}
+.filter-pill{padding:6px 14px;border:1.5px solid var(--g20);background:#fff;color:var(--g80);font-size:12px;font-weight:500;cursor:pointer;font-family:var(--font);transition:all .15s;border-radius:20px}
+.filter-pill:hover{border-color:var(--g60)}
+.filter-pill.active{background:var(--red);color:#fff;border-color:var(--red)}
+.cat-products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--g10)}/* ── ASSISTANT BANNER ── */
+.assistant-banner{background:var(--red);padding:48px 32px}
+.assistant-banner-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.assist-banner-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.assist-banner-tag::before{content:'';width:18px;height:2px;background:rgba(255,255,255,.5)}
+.assist-banner-title{font-size:30px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:8px}
+.assist-banner-desc{font-size:14px;color:rgba(255,255,255,.65);max-width:460px;line-height:1.6}
+.btn-assist-white{background:#fff;color:var(--red);border:none;padding:14px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--font);white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:8px}
+.btn-assist-white:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+/* ── PAGE HEADER ── */
+.page-header{background:#fff;border-bottom:1px solid var(--g10);padding:22px 32px}
+.page-header-inner{max-width:1280px;margin:0 auto}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--g40);margin-bottom:8px}
+.breadcrumb span{cursor:pointer;transition:color .15s}.breadcrumb span:hover{color:var(--red)}
+.breadcrumb-sep{color:var(--g20)}
+.page-title{font-size:28px;font-weight:700;color:var(--black);letter-spacing:-.01em}
+.page-subtitle{font-size:13px;color:var(--g60);margin-top:3px}
+/* ── PRODUCT PAGE ── */
+.product-page-content{max-width:1280px;margin:0 auto;padding:36px 32px;display:grid;grid-template-columns:1fr 420px;gap:52px;align-items:start}
+.product-gallery{position:sticky;top:76px}
+.gallery-main{height:400px;border:1px solid var(--g10);background:var(--g05);display:flex;align-items:center;justify-content:center;margin-bottom:10px;position:relative;overflow:hidden}
+.gallery-label{position:absolute;bottom:10px;right:10px;font-size:10px;color:var(--g40);background:#fff;padding:2px 7px;border:1px solid var(--g10)}
+.gallery-thumbs{display:flex;gap:8px}
+.gallery-thumb{border:2px solid var(--g10);width:68px;height:68px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s;background:var(--g05);overflow:hidden}
+.gallery-thumb.active,.gallery-thumb:hover{border-color:var(--red)}
+.product-info-panel{}
+.product-page-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g40);margin-bottom:6px}
+.product-page-name{font-size:26px;font-weight:700;color:var(--black);line-height:1.2;letter-spacing:-.01em;margin-bottom:4px}
+.product-page-model{font-size:11px;color:var(--g40);margin-bottom:14px;font-family:monospace}
+.product-page-rating{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--g10)}
+.stars{color:#F5A200;font-size:13px;letter-spacing:2px}
+.rating-num{font-size:12px;font-weight:600;color:var(--black)}
+.rating-count{font-size:11px;color:var(--g40)}
+.product-page-price{display:flex;align-items:baseline;gap:9px;margin-bottom:6px}
+.pp-price{font-size:32px;font-weight:700;color:var(--black)}
+.pp-original{font-size:14px;color:var(--g40);text-decoration:line-through}
+.pp-discount{background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:3px 7px}
+.product-page-avail{font-size:12px;color:var(--green);font-weight:600;display:flex;align-items:center;gap:5px;margin-bottom:18px}
+.product-page-avail::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%}
+.product-page-desc{font-size:13px;line-height:1.7;color:var(--g60);margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--g10)}
+.feature-row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--g80);padding:4px 0}
+.feature-row::before{content:'';width:14px;height:2px;background:var(--red);flex-shrink:0}
+.product-ctas{display:flex;flex-direction:column;gap:8px;margin:18px 0}
+.product-ctas .btn-primary,.product-ctas .btn-secondary{width:100%;padding:13px;font-size:14px}
+.product-guarantee{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--g10);margin-bottom:20px}
+.guarantee-item{text-align:center;font-size:10px;color:var(--g60);line-height:1.4;padding:12px 6px;border-right:1px solid var(--g10)}
+.guarantee-item:last-child{border-right:none}
+.guarantee-icon{display:block;margin-bottom:5px}
+.specs-toggle{width:100%;background:none;border:none;border-top:1px solid var(--g10);border-bottom:1px solid var(--g10);padding:12px 0;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:600;color:var(--black);cursor:pointer;font-family:var(--font)}
+.specs-body{padding-bottom:6px}
+.specs-row{display:flex;padding:7px 0;border-bottom:1px solid var(--g05);gap:14px}
+.specs-key{font-size:11px;color:var(--g40);flex:1}
+.specs-val{font-size:11px;color:var(--black);font-weight:500;flex:1;text-align:right}
+/* VIDEO placeholders */
+.video-block{position:relative;background:var(--g90);overflow:hidden;cursor:pointer}
+.video-block-inner{position:relative;padding-bottom:56.25%;height:0}
+.video-block-inner iframe,.video-block-inner video,.video-block-inner .video-cover{position:absolute;top:0;left:0;width:100%;height:100%}
+.video-cover{background:var(--g90);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.video-play-btn{width:56px;height:56px;background:var(--red);display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.video-cover:hover .video-play-btn{transform:scale(1.1)}
+.video-cover-label{font-size:12px;color:rgba(255,255,255,.5)}
+.video-cover-tag{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px}
+.related-card{border:1px solid var(--g10);padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color .15s;margin-top:16px}
+.related-card:hover{border-color:var(--red)}
+/* ── ASSISTANT ── */
+.assistant-view{background:var(--g05);min-height:100vh}
+.assistant-header{background:#fff;border-bottom:1px solid var(--g10);padding:28px 32px}
+.assistant-header-inner{max-width:720px;margin:0 auto}
+.assistant-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(225,0,0,.08);color:var(--red);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-bottom:10px}
+.assistant-title{font-size:26px;font-weight:700;color:var(--black);margin-bottom:4px}
+.assistant-desc{font-size:13px;color:var(--g60)}
+.assistant-progress{display:flex;align-items:center;margin-top:20px}
+.progress-step{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:500;color:var(--g40)}
+.progress-step.active{color:var(--red)}.progress-step.done{color:var(--g60)}
+.progress-dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--g20);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+.progress-step.active .progress-dot{border-color:var(--red);background:var(--red);color:#fff}
+.progress-step.done .progress-dot{border-color:var(--g40);background:var(--g20);color:var(--g60)}
+.progress-line{flex:1;height:2px;background:var(--g10);margin:0 7px}
+.progress-line.done{background:var(--g40)}
+.assistant-body{max-width:720px;margin:0 auto;padding:32px}
+.question-card{background:#fff;border:1px solid var(--g10);padding:28px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.question-num{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.question-text{font-size:20px;font-weight:700;color:var(--black);margin-bottom:3px;line-height:1.2}
+.question-hint{font-size:12px;color:var(--g40);margin-bottom:20px}
+.answer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.answer-grid-3{grid-template-columns:repeat(3,1fr)}
+.answer-card{background:var(--g05);border:2px solid var(--g10);padding:16px;cursor:pointer;transition:all .15s}
+.answer-card:hover{border-color:var(--red);background:rgba(225,0,0,.03)}
+.answer-card.selected{border-color:var(--red);background:rgba(225,0,0,.06)}
+.answer-icon{width:38px;height:38px;background:var(--g10);display:flex;align-items:center;justify-content:center;margin-bottom:9px;transition:background .15s}
+.answer-card:hover .answer-icon,.answer-card.selected .answer-icon{background:var(--red)}
+.answer-label{font-size:13px;font-weight:600;color:var(--black);margin-bottom:2px}
+.answer-desc{font-size:11px;color:var(--g40);line-height:1.4}
+.recommendation-card{background:#fff;border:1px solid var(--g10);overflow:hidden;margin-bottom:12px}
+.rec-header{background:var(--red);padding:10px 18px;display:flex;align-items:center;justify-content:space-between}
+.rec-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.rec-match{font-size:12px;font-weight:600;color:#fff}
+.rec-body{padding:18px;display:grid;grid-template-columns:110px 1fr;gap:16px;align-items:center}
+.rec-img{height:110px;display:flex;align-items:center;justify-content:center;border:1px solid var(--g10);overflow:hidden;background:var(--g05)}
+.rec-name{font-size:18px;font-weight:700;color:var(--black);margin-bottom:5px;line-height:1.2}
+.rec-price{font-size:22px;font-weight:700;color:var(--black);margin-bottom:7px}
+.rec-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:6px}
+.rec-tag{background:var(--g05);color:var(--g60);font-size:10px;padding:2px 7px;border:1px solid var(--g10)}
+.rec-footer{padding:0 18px 18px;display:flex;gap:10px}
+.comparison-table{background:#fff;border:1px solid var(--g10);overflow:hidden;margin-bottom:20px}
+.comp-header{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--g05);border-bottom:2px solid var(--g10);padding:12px 14px;gap:6px}
+.comp-header-cell{font-size:12px;font-weight:700;color:var(--black);text-align:center}
+.comp-header-cell:first-child{text-align:left}
+.comp-header-cell.highlight{color:var(--red)}
+.comp-row{display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 14px;border-bottom:1px solid var(--g05);gap:6px;align-items:center}
+.comp-row:last-child{border-bottom:none}.comp-row:nth-child(even){background:var(--g05)}
+.comp-cell{font-size:12px;color:var(--g60);text-align:center}
+.comp-cell:first-child{text-align:left;font-weight:500;color:var(--black)}
+.comp-highlight{color:var(--red);font-weight:700}
+/* ── CART ── */
+.cart-view{min-height:calc(100vh - 96px);background:var(--g05)}
+.cart-content{max-width:1060px;margin:0 auto;padding:32px;display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
+.cart-items{background:#fff;border:1px solid var(--g10)}
+.cart-title{font-size:18px;font-weight:700;padding:16px 20px;border-bottom:1px solid var(--g10)}
+.cart-item{display:grid;grid-template-columns:76px 1fr auto;gap:12px;padding:16px 20px;border-bottom:1px solid var(--g05);align-items:center}
+.cart-item:last-child{border-bottom:none}
+.cart-item-img{height:76px;display:flex;align-items:center;justify-content:center;border:1px solid var(--g10);background:var(--g05);overflow:hidden}
+.cart-item-name{font-size:13px;font-weight:600;color:var(--black);margin-bottom:3px}
+.cart-item-model{font-size:10px;color:var(--g40);font-family:monospace;margin-bottom:7px}
+.cart-item-price{font-size:18px;font-weight:700;color:var(--black)}
+.cart-qty{display:flex;align-items:center;border:1px solid var(--g20)}
+.qty-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:var(--g05);border:none;cursor:pointer;font-size:15px;font-weight:600;color:var(--g60);transition:background .1s}
+.qty-btn:hover{background:var(--g10)}
+.qty-num{width:32px;text-align:center;font-size:13px;font-weight:600}
+.cart-remove{background:none;border:none;color:var(--g20);cursor:pointer;font-size:14px;padding:3px;transition:color .15s}
+.cart-remove:hover{color:var(--red)}
+.cart-empty{text-align:center;padding:52px 20px}
+.cart-summary{background:#fff;border:1px solid var(--g10);padding:20px;position:sticky;top:80px}
+.summary-title{font-size:17px;font-weight:700;margin-bottom:16px}
+.summary-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:13px;color:var(--g60)}
+.summary-row.total{border-top:2px solid var(--black);margin-top:6px;padding-top:12px;font-size:15px;font-weight:700;color:var(--black)}
+.summary-discount{color:var(--red);font-weight:600}
+.summary-total-price{font-size:22px;font-weight:700}
+.cart-checkout-cta{width:100%;margin-top:12px}
+.secure-note{text-align:center;font-size:10px;color:var(--g40);margin-top:8px;display:flex;align-items:center;justify-content:center;gap:4px}
+/* ── CHECKOUT ── */
+.checkout-view{background:var(--g05);min-height:calc(100vh - 96px)}
+.checkout-content{max-width:960px;margin:0 auto;padding:32px;display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start}
+.checkout-steps{display:flex;align-items:center;margin-bottom:20px}
+.checkout-step{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--g40);flex:1}
+.checkout-step.active{color:var(--red);font-weight:600}.checkout-step.done{color:var(--g60)}
+.checkout-step-num{width:26px;height:26px;border-radius:50%;border:2px solid var(--g20);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.checkout-step.active .checkout-step-num{border-color:var(--red);background:var(--red);color:#fff}
+.checkout-step.done .checkout-step-num{border-color:var(--g40);background:var(--g20);color:var(--g60)}
+.checkout-step-line{flex:1;height:2px;background:var(--g10);margin:0 4px}
+.checkout-step-line.done{background:var(--g40)}
+.checkout-form{background:#fff;border:1px solid var(--g10);padding:24px}
+.checkout-form-title{font-size:18px;font-weight:700;margin-bottom:20px}
+.form-row{margin-bottom:12px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px}
+.form-label{font-size:10px;font-weight:600;color:var(--g60);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;display:block}
+.form-input{width:100%;padding:10px 11px;border:1.5px solid var(--g20);font-size:13px;font-family:var(--font);color:var(--black);background:#fff;transition:border-color .15s;outline:none}
+.form-input:focus{border-color:var(--red)}
+.form-input.error{border-color:#E24B4A;background:#FCEBEB}
+.form-input::placeholder{color:var(--g20)}
+.form-select{width:100%;padding:10px 11px;border:1.5px solid var(--g20);font-size:13px;font-family:var(--font);color:var(--black);background:#fff;outline:none;cursor:pointer}
+.form-select:focus{border-color:var(--red)}
+.checkout-nav{display:flex;gap:9px;margin-top:18px;padding-top:16px;border-top:1px solid var(--g10)}
+.checkout-nav .btn-primary{flex:1;padding:13px;font-size:14px}
+.checkout-nav .btn-secondary{padding:13px 18px}
+.shipping-option{display:flex;align-items:center;gap:12px;padding:12px 14px;border:2px solid var(--g10);cursor:pointer;transition:border-color .15s;margin-bottom:8px}
+.shipping-option:hover,.shipping-option.selected{border-color:var(--red)}
+.shipping-radio{width:16px;height:16px;border-radius:50%;border:2px solid var(--g20);flex-shrink:0;position:relative}
+.shipping-option.selected .shipping-radio{border-color:var(--red)}
+.shipping-option.selected .shipping-radio::after{content:'';width:6px;height:6px;background:var(--red);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.shipping-name{font-size:13px;font-weight:600;color:var(--black)}
+.shipping-days{font-size:11px;color:var(--g40)}
+.shipping-price{font-size:13px;font-weight:700;color:var(--black);margin-left:auto}
+.order-review-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--g05)}
+.order-review-img{width:44px;height:44px;background:var(--g05);display:flex;align-items:center;justify-content:center;border:1px solid var(--g10);flex-shrink:0;overflow:hidden}
+.order-review-name{font-size:12px;font-weight:500;color:var(--black);flex:1}
+.order-review-price{font-size:13px;font-weight:700;color:var(--black)}
+.review-data-block{background:var(--g05);padding:12px 14px;margin-bottom:12px}
+.review-data-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--g40);margin-bottom:5px}
+.review-data-line{font-size:13px;color:var(--black);margin-bottom:2px}
+/* ── SUCCESS ── */
+.success-view{background:var(--g05);min-height:calc(100vh - 96px)}
+.success-content{max-width:560px;margin:0 auto;padding:72px 32px;text-align:center}
+.success-tag{display:inline-block;background:rgba(0,136,74,.1);color:var(--green);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-bottom:14px}
+.success-title{font-size:34px;font-weight:700;color:var(--black);margin-bottom:8px;line-height:1.1}
+.success-subtitle{font-size:14px;color:var(--g60);margin-bottom:24px;line-height:1.6}
+.order-num{background:#fff;border:1px solid var(--g10);padding:12px 22px;font-size:12px;color:var(--g60);margin-bottom:24px;display:inline-block}
+.order-num strong{font-family:monospace;font-size:14px;color:var(--black)}
+.success-items{background:#fff;border:1px solid var(--g10);padding:16px;margin-bottom:24px;text-align:left}
+.success-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--g10);margin-bottom:24px}
+.trust-card{background:#fff;padding:14px 10px;text-align:center}
+.trust-card-text{font-size:11px;color:var(--g60);line-height:1.5;margin-top:6px}
+/* ── FOOTER — compact ── */
+.footer{background:var(--black)}
+.footer-supergraphic{height:3px;background:linear-gradient(90deg,#E10000 0%,#E10000 16%,#C00067 16%,#C00067 30%,#8B0FAB 30%,#8B0FAB 44%,#007BC0 44%,#007BC0 58%,#008E9B 58%,#008E9B 72%,#00884A 72%,#00884A 86%,#7DB928 86%,#7DB928 100%)}
+.footer-main{padding:24px 32px}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:28px}
+.footer-brand p{font-size:10px;color:rgba(255,255,255,.28);line-height:1.5;max-width:200px;margin-top:8px}
+.footer-tagline{font-size:15px;font-weight:700;color:rgba(255,255,255,.65);margin-top:10px;font-style:italic}
+.footer-col-title{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px}
+.footer-link{font-size:11px;color:rgba(255,255,255,.45);display:block;margin-bottom:5px;cursor:pointer;transition:color .15s;text-decoration:none}
+.footer-link:hover{color:#fff}
+.footer-contact-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:10px;margin-bottom:8px}
+.footer-contact-title{font-size:10px;font-weight:700;color:#fff;margin-bottom:6px}
+.footer-contact-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.footer-contact-info{font-size:11px;color:rgba(255,255,255,.5)}
+.footer-contact-info a{color:var(--blue);text-decoration:none}
+.footer-contact-info a:hover{text-decoration:underline}
+.footer-hours{font-size:9px;color:rgba(255,255,255,.25);margin-top:4px;line-height:1.5}
+.footer-bottom{max-width:1280px;margin:0 auto;padding:12px 32px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:9px;color:rgba(255,255,255,.18)}
+.footer-payment{display:flex;align-items:center;gap:6px}
+.pay-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);padding:2px 7px;font-size:9px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.04em}
+/* ── PROMOTIONS / CUPONES / BUNDLES ── */
+.promo-bar{background:linear-gradient(90deg,#1a1a1a 0%,#2a2a2a 100%);padding:10px 32px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.promo-bar-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:rgba(255,255,255,.85)}
+.promo-bar-item strong{color:#FFD600;font-weight:700}
+.promo-bar-sep{width:1px;height:16px;background:rgba(255,255,255,.15)}
+.promo-timer{background:rgba(255,214,0,.15);border:1px solid rgba(255,214,0,.3);color:#FFD600;font-size:11px;font-weight:700;padding:3px 8px;font-family:monospace;letter-spacing:.04em}
+
+/* Flash sale banner */
+.flash-sale-bar{background:var(--red);padding:8px 32px;display:flex;align-items:center;justify-content:center;gap:16px}
+.flash-sale-text{font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px}
+.flash-badge{background:#FFD600;color:#000;font-size:10px;font-weight:800;padding:2px 8px;letter-spacing:.06em;text-transform:uppercase}
+
+/* Bundles section */
+.bundles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:0}
+.bundle-card{background:#fff;border:2px solid var(--g10);padding:20px;position:relative;cursor:pointer;transition:all .18s}
+.bundle-card:hover{border-color:var(--red);box-shadow:0 4px 20px rgba(225,0,0,.1)}
+.bundle-badge{position:absolute;top:-1px;right:16px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;letter-spacing:.04em;text-transform:uppercase}
+.bundle-products{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.bundle-prod-img{width:80px;height:80px;background:var(--g05);border:1px solid var(--g10);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bundle-plus{font-size:22px;font-weight:300;color:var(--g20)}
+.bundle-name{font-size:15px;font-weight:700;color:var(--black);margin-bottom:4px}
+.bundle-desc{font-size:12px;color:var(--g60);margin-bottom:12px;line-height:1.5}
+.bundle-pricing{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.bundle-price{font-size:24px;font-weight:700;color:var(--black)}
+.bundle-original{font-size:14px;color:var(--g40);text-decoration:line-through}
+.bundle-save{background:rgba(225,0,0,.08);color:var(--red);font-size:11px;font-weight:700;padding:3px 8px}
+
+/* Cuponera / cupón section */
+.coupon-section{background:linear-gradient(135deg,#1A1A1A 0%,#2C2C2C 100%);padding:40px 32px}
+.coupon-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.coupon-left{}
+.coupon-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.coupon-tag::before{content:'';width:16px;height:2px;background:var(--red)}
+.coupon-title{font-size:26px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px}
+.coupon-title span{color:#FFD600}
+.coupon-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}
+.coupon-cards{display:flex;flex-direction:column;gap:12px}
+.coupon-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--red);padding:14px 16px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all .15s}
+.coupon-card:hover{background:rgba(255,255,255,.1);transform:translateX(3px)}
+.coupon-code{font-family:monospace;font-size:16px;font-weight:700;color:#FFD600;letter-spacing:.08em;background:rgba(255,214,0,.1);padding:4px 10px;border:1px dashed rgba(255,214,0,.3);cursor:pointer;flex-shrink:0}
+.coupon-info{flex:1}
+.coupon-name{font-size:13px;font-weight:600;color:#fff;margin-bottom:2px}
+.coupon-terms{font-size:11px;color:rgba(255,255,255,.35)}
+.coupon-copy-btn{background:var(--red);color:#fff;border:none;font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;font-family:var(--font);transition:background .15s;white-space:nowrap}
+.coupon-copy-btn:hover{background:var(--red-d)}
+
+/* Cart cross-sell panel */
+.cart-cross-sell{background:var(--g05);border:1px solid var(--g10);margin-top:0}
+.cart-cs-title{font-size:13px;font-weight:700;color:var(--black);padding:14px 18px;border-bottom:1px solid var(--g10);display:flex;align-items:center;gap:8px}
+.cart-cs-items{display:flex;flex-direction:column;gap:0}
+.cart-cs-item{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--g10);background:#fff;transition:background .12s}
+.cart-cs-item:last-child{border-bottom:none}
+.cart-cs-item:hover{background:var(--g05)}
+.cart-cs-img{width:52px;height:52px;background:var(--g05);border:1px solid var(--g10);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.cart-cs-info{flex:1}
+.cart-cs-name{font-size:12px;font-weight:600;color:var(--black);margin-bottom:1px;line-height:1.3}
+.cart-cs-price{font-size:13px;font-weight:700;color:var(--red)}
+.cart-cs-tag{font-size:9px;color:var(--g40);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.cart-cs-add{background:var(--red);color:#fff;border:none;font-size:11px;font-weight:700;padding:6px 12px;cursor:pointer;font-family:var(--font);transition:background .12s;white-space:nowrap;flex-shrink:0}
+.cart-cs-add:hover{background:var(--red-d)}
+
+/* Coupon input in checkout */
+.coupon-input-row{display:flex;gap:8px;margin-bottom:14px}
+.coupon-input-row .form-input{flex:1}
+.coupon-apply-btn{background:var(--black);color:#fff;border:none;padding:0 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:var(--font);white-space:nowrap}
+.coupon-applied{background:rgba(0,136,74,.1);border:1px solid rgba(0,136,74,.3);color:var(--green);font-size:12px;font-weight:600;padding:8px 12px;display:flex;align-items:center;gap:6px;margin-bottom:12px}
+
+/* Bono segunda compra (success screen) */
+.bono-card{background:linear-gradient(135deg,#1A1A1A,#2a2a2a);border:1px solid rgba(255,214,0,.25);padding:20px;margin-top:16px;text-align:left}
+.bono-card-title{font-size:12px;font-weight:700;color:#FFD600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.bono-card-code{font-family:monospace;font-size:22px;font-weight:700;color:#fff;letter-spacing:.1em;background:rgba(255,255,255,.05);padding:8px 16px;display:inline-block;border:1px dashed rgba(255,255,255,.2);margin-bottom:8px}
+.bono-card-desc{font-size:12px;color:rgba(255,255,255,.45);line-height:1.5}
+
+/* ── PROMOTIONS / CUPONES / BUNDLES ── */
+.chat-widget{position:fixed;bottom:24px;right:24px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.chat-bubble-btn{width:52px;height:52px;background:var(--red);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(225,0,0,.4);transition:all .2s;position:relative}
+.chat-bubble-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(225,0,0,.5)}
+.chat-notif{position:absolute;top:-4px;right:-4px;background:var(--black);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+.chat-panel{background:#fff;border:1px solid var(--g10);box-shadow:0 8px 32px rgba(0,0,0,.14);width:340px;max-height:480px;display:flex;flex-direction:column;transform-origin:bottom right;animation:slideIn .25s ease}
+.chat-panel.hidden{display:none}
+.chat-header{background:var(--red);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.chat-header-info{display:flex;align-items:center;gap:10px}
+.chat-avatar{width:34px;height:34px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.chat-name{font-size:13px;font-weight:600;color:#fff}
+.chat-status{font-size:10px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:4px}
+.chat-status::before{content:'';width:6px;height:6px;background:#4ade80;border-radius:50%}
+.chat-close{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.7);font-size:18px;line-height:1;padding:0}
+.chat-close:hover{color:#fff}
+.chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:200px}
+.chat-messages::-webkit-scrollbar{width:4px}
+.chat-messages::-webkit-scrollbar-track{background:transparent}
+.chat-messages::-webkit-scrollbar-thumb{background:var(--g20);border-radius:2px}
+.msg{max-width:85%;animation:fadeUp .25s ease}
+.msg-bot{align-self:flex-start}
+.msg-user{align-self:flex-end}
+.msg-bubble{padding:10px 13px;font-size:13px;line-height:1.5}
+.msg-bot .msg-bubble{background:var(--g05);color:var(--black);border:1px solid var(--g10)}
+.msg-user .msg-bubble{background:var(--red);color:#fff}
+.msg-time{font-size:10px;color:var(--g40);margin-top:3px}
+.msg-bot .msg-time{text-align:left}.msg-user .msg-time{text-align:right}
+.chat-options{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.chat-opt-btn{background:#fff;border:1.5px solid var(--g10);padding:8px 12px;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--font);text-align:left;transition:all .15s;color:var(--black)}
+.chat-opt-btn:hover{border-color:var(--red);color:var(--red)}
+.chat-prod-suggest{background:#fff;border:1px solid var(--g10);padding:10px;display:flex;gap:10px;align-items:center;cursor:pointer;transition:border-color .15s;margin-top:4px}
+.chat-prod-suggest:hover{border-color:var(--red)}
+.chat-prod-img{width:48px;height:48px;background:var(--g05);border:1px solid var(--g10);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.chat-prod-name{font-size:12px;font-weight:600;color:var(--black)}
+.chat-prod-price{font-size:12px;color:var(--red);font-weight:700}
+.chat-prod-action{font-size:11px;color:var(--g40)}
+.chat-typing{display:flex;align-items:center;gap:4px;padding:10px 13px;background:var(--g05);border:1px solid var(--g10);align-self:flex-start}
+.typing-dot{width:6px;height:6px;background:var(--g40);border-radius:50%;animation:typingBounce 1.2s ease infinite}
+.typing-dot:nth-child(2){animation-delay:.2s}.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.chat-footer{padding:10px 12px;border-top:1px solid var(--g10);display:flex;gap:8px;flex-shrink:0}
+.chat-input{flex:1;padding:8px 10px;border:1.5px solid var(--g10);font-size:12px;font-family:var(--font);outline:none}
+.chat-input:focus{border-color:var(--red)}
+.chat-send{background:var(--red);border:none;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s;flex-shrink:0}
+.chat-send:hover{background:var(--red-d)}
+/* ── TOAST ── */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--g90);color:#fff;padding:12px 18px;font-size:13px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:600;opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);display:flex;align-items:center;gap:9px;border-left:3px solid var(--red);white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+</style>
+</head>
+<body>
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toastMsg">Producto agregado</span></div>
+
+<!-- SUPERGRAPHIC + HEADER -->
+<div class="supergraphic"></div>
+<header class="header">
+  <div class="header-top">
+    <a class="htop-link" href="#">Soporte</a>
+    <a class="htop-link" href="#">Garantías</a>
+    <a class="htop-link" href="#">bosch-professional.com/mx</a>
+  </div>
+  <div class="header-main">
+    <div class="header-inner">
+      <!-- BOSCH LOGO — símbolo de ancla correcto con proporciones reales -->
+      <div class="bosch-logo" onclick="nav('home')">
+        <svg width="160" height="42" viewBox="0 0 160 42" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer ring -->
+          <circle cx="21" cy="21" r="19.5" fill="none" stroke="#000" stroke-width="2.2"/>
+          <!-- Inner ring — ratio correcto al logo real -->
+          <circle cx="21" cy="21" r="13.5" fill="none" stroke="#000" stroke-width="2.2"/>
+          <!-- Vertical bar — delgado, llega hasta el borde del círculo interior -->
+          <rect x="19.8" y="7.5" width="2.4" height="27" fill="#000"/>
+          <!-- Horizontal bar — llega hasta borde del círculo interior -->
+          <rect x="7.5" y="19.8" width="27" height="2.4" fill="#000"/>
+          <!-- BOSCH wordmark en rojo Bosch exacto -->
+          <text x="50" y="29" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="900" font-size="26" fill="#E10000" letter-spacing="1">BOSCH</text>
+        </svg>
+        <span class="logo-tagline">Tienda<br>Oficial MX</span>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-link" onclick="nav('home')">Inicio</button>
+        <button class="nav-link" onclick="showCat('calentadores')">Calentadores</button>
+        <button class="nav-link" onclick="showCat('taladros')">Taladros</button>
+        <button class="nav-link" onclick="showCat('pulidoras')">Pulidoras</button>
+        <button class="nav-link" onclick="nav('assistant')">Recomendación</button>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-nav-assist" onclick="nav('assistant')">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M4.5 6.5h4M6.5 4.5l2 2-2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ayuda para elegir
+        </button>
+        <button class="cart-btn" onclick="nav('cart')">
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M1 1h2.2l1.5 7.8A2 2 0 006.5 10h7a2 2 0 001.96-1.6L16 5H4" stroke="#333" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="14.5" r="1.2" fill="#333"/><circle cx="13" cy="14.5" r="1.2" fill="#333"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<div class="view active" id="view-home">
+
+  <!-- PROMO TOP BAR -->
+  <div class="promo-bar">
+    <div class="promo-bar-item">🎁 Primera compra: <strong>10% OFF</strong> con código <strong>BOSCH10</strong></div>
+    <div class="promo-bar-sep"></div>
+    <div class="promo-bar-item">⚡ Flash Sale: <strong>hasta -20%</strong> en herramientas seleccionadas</div>
+    <div class="promo-bar-sep"></div>
+    <div class="promo-bar-item">📦 Envío gratis en compras <strong>desde $999</strong></div>
+  </div>
+
+  <!-- FLASH SALE BAR (junio / nov-dic) -->
+  <div class="flash-sale-bar" id="flashSaleBar" style="display:none">
+    <div class="flash-sale-text">
+      <span class="flash-badge">⚡ Flash Sale</span>
+      Ofertas especiales — terminan en: <span class="promo-timer" id="flashTimer">02:47:33</span>
+    </div>
+    <button class="btn-assist-white" style="padding:7px 16px;font-size:12px;color:var(--red)" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">Ver ofertas →</button>
+  </div>
+
+  <!-- HERO compact -->
+  <section class="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-red-bar"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-eyebrow">Tecnología alemana desde 1886</div>
+        <h1 class="hero-title">La herramienta<br>correcta para<br><em>cada trabajo.</em></h1>
+        <p class="hero-desc">Encuentra lo que necesitas sin tecnicismos. Nuestro asistente te guía en segundos.</p>
+        <div class="hero-actions">
+          <button class="btn-hero-main" onclick="nav('assistant')">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M5.5 8h5M8 5.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Ayúdame a elegir el producto correcto
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="hero-prod-label">Más vendidos</div>
+        <div class="hero-products" id="heroProds"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M6 12l4 4 4-4" stroke="rgba(255,255,255,.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-size:9px;letter-spacing:.08em;text-transform:uppercase">Ver productos</span>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <div class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <!-- Truck icon — envío gratis -->
+          <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="3" width="16" height="12" rx="1.5" stroke="#E10000" stroke-width="1.6"/>
+            <path d="M17 7h5l2 4v4h-7V7z" stroke="#E10000" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="5.5" cy="18" r="2.5" stroke="#E10000" stroke-width="1.5" fill="white"/>
+            <circle cx="20.5" cy="18" r="2.5" stroke="#E10000" stroke-width="1.5" fill="white"/>
+            <path d="M8 18h9" stroke="#E10000" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div><div class="trust-label">Envío gratis</div><div class="trust-sub">En compras desde $999</div></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <!-- Shield with star — garantía -->
+          <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 1L2 5v7c0 5.25 3.9 10.15 9 11.35C16.1 22.15 20 17.25 20 12V5L11 1z" stroke="#E10000" stroke-width="1.6" stroke-linejoin="round" fill="rgba(225,0,0,.06)"/>
+            <path d="M11 8l1.2 3.6H16l-3 2.2 1.1 3.5L11 15l-3.1 2.3 1.1-3.5-3-2.2h3.8L11 8z" fill="#E10000" opacity=".8"/>
+          </svg>
+        </div>
+        <div><div class="trust-label">Garantía oficial</div><div class="trust-sub">1 a 3 años Bosch</div></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <!-- Calendar with checkmark — 30 días devolución -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="4" width="20" height="18" rx="2" stroke="#E10000" stroke-width="1.6" fill="rgba(225,0,0,.06)"/>
+            <path d="M2 9h20" stroke="#E10000" stroke-width="1.5"/>
+            <path d="M7 2v4M17 2v4" stroke="#E10000" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M7 14l3 3 7-6" stroke="#E10000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div><div class="trust-label">30 días devolución</div><div class="trust-sub">Sin preguntas</div></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon-box">
+          <!-- Lock — pago seguro -->
+          <svg width="20" height="26" viewBox="0 0 20 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="11" width="16" height="13" rx="2" stroke="#E10000" stroke-width="1.6" fill="rgba(225,0,0,.06)"/>
+            <path d="M5 11V8a5 5 0 0110 0v3" stroke="#E10000" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="10" cy="17.5" r="2" fill="#E10000"/>
+            <path d="M10 19.5v2" stroke="#E10000" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div><div class="trust-label">Pago seguro</div><div class="trust-sub">VISA, OXXO, SPEI</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <div class="section" style="padding-bottom:0">
+    <div class="section-header"><h2 class="section-title">Explora por categoría</h2></div>
+    <div class="categories-mega-grid">
+      <div class="cat-mega-card" onclick="showCat('calentadores')">
+        <div class="cat-mega-img" id="catImg0"></div>
+        <div><div class="cat-mega-name">Calentadores de agua</div><div class="cat-mega-sub">Gas y eléctricos</div></div>
+      </div>
+      <div class="cat-mega-card" onclick="showCat('taladros')">
+        <div class="cat-mega-img" id="catImg1"></div>
+        <div><div class="cat-mega-name">Taladros y atornilladores</div><div class="cat-mega-sub">Inalámbricos y de cable</div></div>
+      </div>
+      <div class="cat-mega-card" onclick="showCat('pulidoras')">
+        <div class="cat-mega-img" id="catImg2"></div>
+        <div><div class="cat-mega-name">Esmeriles y pulidoras</div><div class="cat-mega-sub">Para metal, piedra y madera</div></div>
+      </div>
+      <div class="cat-mega-card" style="opacity:.5;cursor:default">
+        <div class="cat-mega-img" id="catImg3"></div>
+        <div><div class="cat-mega-name" style="color:#999">Baterías y cargadores</div><div class="cat-mega-sub">Próximamente</div></div>
+      </div>
+      <div class="cat-mega-card" style="opacity:.5;cursor:default">
+        <div class="cat-mega-img" id="catImg4"></div>
+        <div><div class="cat-mega-name" style="color:#999">Medición</div><div class="cat-mega-sub">Próximamente</div></div>
+      </div>
+      <div class="cat-mega-card" onclick="nav('assistant')" style="background:#fff7f7">
+        <div class="cat-mega-img">
+          <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+            <rect width="68" height="68" rx="4" fill="rgba(225,0,0,.06)"/>
+            <circle cx="34" cy="34" r="22" stroke="#E10000" stroke-width="1.8" fill="rgba(225,0,0,.04)"/>
+            <path d="M22 34h24M34 22l12 12-12 12" stroke="#E10000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div><div class="cat-mega-name" style="color:#E10000">Nuestra recomendación</div><div class="cat-mega-sub" style="color:rgba(225,0,0,.5)">Te ayudamos a elegir</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASSISTANT BANNER -->
+  <div class="assistant-banner" style="margin-top:40px">
+    <div class="assistant-banner-inner">
+      <div>
+        <div class="assist-banner-tag">Asistente inteligente de compra</div>
+        <h2 class="assist-banner-title">¿No sabes qué producto necesitas?</h2>
+        <p class="assist-banner-desc">3 preguntas simples. Sin tecnicismos. Te recomendamos exactamente el producto Bosch ideal para tu caso.</p>
+      </div>
+      <button class="btn-assist-white" onclick="nav('assistant')">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#E10000" stroke-width="1.5"/><path d="M6 9h6M9 6l3 3-3 3" stroke="#E10000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Comenzar ahora
+      </button>
+    </div>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <div class="section" id="featured">
+    <div class="section-header">
+      <h2 class="section-title">Productos <span class="section-title-red">destacados</span></h2>
+      <button class="section-link" onclick="showCat('all')">Ver todo →</button>
+    </div>
+    <div class="products-grid" id="featuredGrid"></div>
+  </div>
+
+  <!-- BUNDLES -->
+  <div class="section" style="padding-top:0">
+    <div class="section-header">
+      <h2 class="section-title">Kits y <span class="section-title-red">bundles</span></h2>
+      <span style="font-size:12px;color:var(--g40)">Más valor, mejor precio</span>
+    </div>
+    <div class="bundles-grid" id="bundlesGrid"></div>
+  </div>
+
+  <!-- COUPON / PROMOCIONES -->
+  <div class="coupon-section">
+    <div class="coupon-inner">
+      <div class="coupon-left">
+        <div class="coupon-tag">Cupones y promociones</div>
+        <h2 class="coupon-title">Ahorra en tu <span>primera</span><br>y segunda compra</h2>
+        <p class="coupon-desc">Copia el código, pégalo en el checkout y el descuento se aplica automáticamente. Sin complicaciones.</p>
+      </div>
+      <div class="coupon-cards">
+        <div class="coupon-card" onclick="copyCoupon('BOSCH10',this)">
+          <div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Primera compra</div>
+            <div class="coupon-code">BOSCH10</div>
+          </div>
+          <div class="coupon-info">
+            <div class="coupon-name">10% de descuento</div>
+            <div class="coupon-terms">Válido en tu primera compra · Sin mínimo de compra</div>
+          </div>
+          <button class="coupon-copy-btn">Copiar</button>
+        </div>
+        <div class="coupon-card" onclick="copyCoupon('VUELVE5',this)">
+          <div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Segunda compra</div>
+            <div class="coupon-code">VUELVE5</div>
+          </div>
+          <div class="coupon-info">
+            <div class="coupon-name">5% + envío gratis</div>
+            <div class="coupon-terms">Para clientes con historial de compra · Válido 30 días</div>
+          </div>
+          <button class="coupon-copy-btn">Copiar</button>
+        </div>
+        <div class="coupon-card" onclick="copyCoupon('BUNDLE15',this)">
+          <div>
+            <div style="font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Kit / Bundle</div>
+            <div class="coupon-code">BUNDLE15</div>
+          </div>
+          <div class="coupon-info">
+            <div class="coupon-name">15% en cualquier bundle</div>
+            <div class="coupon-terms">Aplica solo en kits y bundles · Mínimo $2,000</div>
+          </div>
+          <button class="coupon-copy-btn">Copiar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-supergraphic"></div>
+    <div class="footer-main">
+      <div class="footer-inner">
+        <div>
+          <svg width="120" height="34" viewBox="0 0 148 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18.5" fill="none" stroke="#fff" stroke-width="2"/>
+            <circle cx="20" cy="20" r="12" fill="none" stroke="#fff" stroke-width="2"/>
+            <rect x="18.5" y="7" width="3" height="26" fill="#fff"/>
+            <rect x="7" y="18.5" width="26" height="3" fill="#fff"/>
+            <text x="48" y="27" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="800" font-size="24" fill="#fff" letter-spacing=".5">BOSCH</text>
+          </svg>
+          <div class="footer-tagline">Invented for life</div>
+          <p>Distribución oficial Bosch en México. Tecnología que mejora la vida de las personas.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Productos</div>
+          <a class="footer-link" onclick="showCat('calentadores')">Calentadores de agua</a>
+          <a class="footer-link" onclick="showCat('taladros')">Taladros</a>
+          <a class="footer-link" onclick="showCat('pulidoras')">Esmeriles y pulidoras</a>
+          <a class="footer-link" style="opacity:.4;cursor:default">Baterías</a>
+          <a class="footer-link" style="opacity:.4;cursor:default">Medición</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Ayuda</div>
+          <a class="footer-link" onclick="nav('assistant')">Asistente de compra</a>
+          <a class="footer-link">Centro de garantías</a>
+          <a class="footer-link">Preguntas frecuentes</a>
+          <a class="footer-link">Devoluciones</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Contacto</div>
+          <div class="footer-contact-block">
+            <div class="footer-contact-title">Temas de compra</div>
+            <div class="footer-contact-row">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="3" width="10" height="7" rx="1" stroke="#fff" stroke-width="1"/><path d="M1 4l5 3.5L11 4" stroke="#fff" stroke-width="1"/></svg>
+              <div class="footer-contact-info"><a href="mailto:ecommerce.bosch@mx.bosch.com">ecommerce.bosch@mx.bosch.com</a></div>
+            </div>
+          </div>
+          <div class="footer-contact-block">
+            <div class="footer-contact-title">Posventa calentadores</div>
+            <div class="footer-contact-row">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="3" width="10" height="7" rx="1" stroke="#fff" stroke-width="1"/><path d="M1 4l5 3.5L11 4" stroke="#fff" stroke-width="1"/></svg>
+              <div class="footer-contact-info"><a href="mailto:termotecnologia.servicio@mx.bosch.com">termotecnologia.servicio@mx.bosch.com</a></div>
+            </div>
+            <div class="footer-contact-row">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3.5 1a1 1 0 00-1 1v.7A7.5 7.5 0 0010.3 9.5h.7a1 1 0 001-1V7.2a.4.4 0 00-.4-.4h-1.5a.4.4 0 00-.4.4v.6A5.5 5.5 0 014.2 2.3h.6a.4.4 0 00.4-.4V.4A.4.4 0 004.8 0H3.3" stroke="#fff" stroke-width="1"/></svg>
+              <div class="footer-contact-info">(55) 1500 5867</div>
+            </div>
+            <div class="footer-hours">Lunes–Sábado: 8 am – 8 pm<br>Domingos: 10 am – 5 pm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Robert Bosch GmbH — Prototipo MVP</div>
+      <div class="footer-payment">
+        <span style="font-size:10px;color:rgba(255,255,255,.2);margin-right:4px;">Pago:</span>
+        <span class="pay-chip">PayPal</span><span class="pay-chip">VISA</span><span class="pay-chip">AMEX</span><span class="pay-chip">OXXO</span><span class="pay-chip">SPEI</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════ CATEGORY ═══════════════ -->
+<div class="view" id="view-category">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb" id="catBcr"></div>
+      <h1 class="page-title" id="catTitle">Productos</h1>
+      <div class="page-subtitle" id="catSub"></div>
+    </div>
+  </div>
+  <div class="category-page-content">
+    <!-- Pill filters -->
+    <div class="filter-pills">
+      <span class="filter-pills-label">Filtrar:</span>
+      <button class="filter-pill active" onclick="filterCat('all',this)">Todos</button>
+      <button class="filter-pill" onclick="filterCat('hogar',this)">Hogar</button>
+      <button class="filter-pill" onclick="filterCat('profesional',this)">Profesional</button>
+      <button class="filter-pill" onclick="filterCat('discount',this)">Con descuento</button>
+      <button class="filter-pill" onclick="filterCat('low',this)">Menor precio</button>
+      <button class="filter-pill" onclick="filterCat('high',this)">Mayor precio</button>
+      <button class="filter-pill" style="background:#fff7f7;border-color:#E10000;color:#E10000;margin-left:auto" onclick="nav('assistant')">✦ ¿Cuál me conviene?</button>
+    </div>
+    <div class="cat-products-grid" id="catGrid"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ PRODUCT ═══════════════ -->
+<div class="view" id="view-product">
+  <div class="page-header">
+    <div class="page-header-inner"><div class="breadcrumb" id="prodBcr"></div></div>
+  </div>
+  <div class="product-page-content">
+    <div class="product-gallery">
+      <div class="gallery-main" id="gallMain"></div>
+      <div class="gallery-thumbs" id="gallThumbs"></div>
+      <!-- VIDEO: YouTube embed real (ID por producto) -->
+      <div class="video-block" style="margin-top:14px;border:1px solid var(--g10)">
+        <div class="video-block-inner">
+          <div class="video-cover" id="videoCover" onclick="playVideo()">
+            <div class="video-cover-tag">Video demo oficial</div>
+            <div class="video-play-btn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M6 4l10 5-10 5V4z" fill="white"/></svg>
+            </div>
+            <div class="video-cover-label" id="videoCoverLabel">Ver demostración del producto</div>
+          </div>
+          <div id="videoEmbedSlot" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%"></div>
+        </div>
+      </div>
+    </div>
+    <div id="prodPanel"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ ASSISTANT ═══════════════ -->
+<div class="view" id="view-assistant">
+  <div class="assistant-view">
+    <div class="assistant-header">
+      <div class="assistant-header-inner">
+        <div class="assistant-tag">Asistente de compra Bosch</div>
+        <h1 class="assistant-title">Te ayudamos a elegir el producto correcto</h1>
+        <div class="assistant-desc">Sin tecnicismos. 3 preguntas simples.</div>
+        <div class="assistant-progress" id="asstProgress"></div>
+      </div>
+    </div>
+    <div class="assistant-body" id="asstBody"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ CART ═══════════════ -->
+<div class="view" id="view-cart">
+  <div class="cart-view">
+    <div style="max-width:1060px;margin:0 auto;padding:24px 32px 0">
+      <div class="breadcrumb"><span onclick="nav('home')">Inicio</span><span class="breadcrumb-sep">›</span><span>Carrito</span></div>
+    </div>
+    <div class="cart-content">
+      <div>
+        <div class="cart-items">
+          <div class="cart-title">Mi carrito (<span id="cartCount">0</span>)</div>
+          <div id="cartList"></div>
+        </div>
+        <!-- CROSS-SELL EN CARRITO -->
+        <div class="cart-cross-sell" id="cartCrossSell" style="display:none;margin-top:2px">
+          <div class="cart-cs-title">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4.5H13l-3.7 2.7 1.4 4.3L7 10l-3.7 2.5 1.4-4.3L1 5.5h4.5L7 1z" fill="#E10000"/></svg>
+            Clientes que compraron esto también llevaron
+          </div>
+          <div class="cart-cs-items" id="cartCsItems"></div>
+        </div>
+      </div>
+      <div>
+        <div class="cart-summary">
+          <div class="summary-title">Resumen</div>
+          <!-- Cupón -->
+          <div style="margin-bottom:14px">
+            <div style="font-size:11px;font-weight:600;color:var(--g60);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">¿Tienes un cupón?</div>
+            <div class="coupon-input-row">
+              <input class="form-input" id="couponInput" placeholder="Ej: BOSCH10" style="font-family:monospace;font-size:13px;text-transform:uppercase">
+              <button class="coupon-apply-btn" onclick="applyCoupon()">Aplicar</button>
+            </div>
+            <div class="coupon-applied" id="couponApplied" style="display:none">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#00884A" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00884A" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <span id="couponAppliedText">Cupón BOSCH10 aplicado — 10% de descuento</span>
+            </div>
+          </div>
+          <div class="summary-row"><span>Subtotal</span><span id="sumSub">$0</span></div>
+          <div class="summary-row" id="sumDiscRow"><span>Descuento</span><span class="summary-discount" id="sumDisc">-$0</span></div>
+          <div class="summary-row" id="couponDiscRow" style="display:none"><span id="couponDiscLabel">Cupón</span><span class="summary-discount" id="couponDiscAmt">-$0</span></div>
+          <div class="summary-row"><span>Envío</span><span>Gratis</span></div>
+          <div class="summary-row total"><span>Total</span><span class="summary-total-price" id="sumTotal">$0</span></div>
+          <button class="btn-primary cart-checkout-cta" id="checkoutBtn" onclick="nav('checkout')">Continuar al pago →</button>
+          <div class="secure-note">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="1" y="4" width="8" height="5" rx="1" stroke="#999" stroke-width=".8"/><path d="M3 4V3a2 2 0 014 0v1" stroke="#999" stroke-width=".8"/></svg>
+            Pago 100% seguro
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CHECKOUT ═══════════════ -->
+<div class="view" id="view-checkout">
+  <div class="checkout-view">
+    <div class="checkout-content">
+      <div>
+        <div class="checkout-steps" id="chkSteps"></div>
+        <div id="chkForm"></div>
+      </div>
+      <div>
+        <div class="cart-summary">
+          <div class="summary-title">Tu pedido</div>
+          <div id="chkItems"></div>
+          <div class="summary-row total" style="margin-top:8px"><span>Total</span><span class="summary-total-price" id="chkTotal">$0</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SUCCESS ═══════════════ -->
+<div class="view" id="view-success">
+  <div class="success-view">
+    <div class="success-content">
+      <div style="margin-bottom:20px">
+        <svg width="68" height="68" viewBox="0 0 68 68" fill="none"><circle cx="34" cy="34" r="32" stroke="#00884A" stroke-width="2.5"/><path d="M21 34l9 9 17-18" stroke="#00884A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="success-tag">Pedido confirmado</div>
+      <h1 class="success-title">¡Tu pedido está en camino!</h1>
+      <p class="success-subtitle">Hemos recibido tu pedido. Recibirás confirmación por correo electrónico.</p>
+      <div class="order-num">Pedido: <strong id="ordNum">#BSH-00001</strong></div>
+      <div class="success-items" id="succItems"></div>
+      <!-- BONO SEGUNDA COMPRA -->
+      <div class="bono-card">
+        <div class="bono-card-title">🎁 Tu bono para la próxima compra</div>
+        <div class="bono-card-code" id="bonoCode">VUELVE5</div>
+        <div class="bono-card-desc">5% de descuento + envío gratis en tu segunda compra. Válido por 30 días. Cópialo y úsalo cuando quieras.</div>
+        <button onclick="copyCoupon('VUELVE5',this)" style="margin-top:10px;background:rgba(255,214,0,.15);border:1px solid rgba(255,214,0,.3);color:#FFD600;font-size:11px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:var(--font)">Copiar código →</button>
+      </div>
+      <div class="success-trust">
+        <div class="trust-card">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 7l5-3 5 3 5-3 5 3v9l-10 5-10-5V7z" stroke="#00884A" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <div class="trust-card-text">Envío en 1–3 días hábiles</div>
+        </div>
+        <div class="trust-card">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 2l2.5 7h7l-5.5 4 2 7L13 16l-6 4 2-7-5.5-4h7L13 2z" stroke="#00884A" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <div class="trust-card-text">Garantía oficial Bosch</div>
+        </div>
+        <div class="trust-card">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="9" width="20" height="14" rx="2" stroke="#00884A" stroke-width="1.4"/><path d="M9 9V7a4 4 0 018 0v2" stroke="#00884A" stroke-width="1.4"/></svg>
+          <div class="trust-card-text">Soporte posventa disponible</div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="nav('home')">Seguir comprando</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CHAT WIDGET ═══════════════ -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-panel hidden" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="7" r="4" stroke="rgba(255,255,255,.9)" stroke-width="1.3"/><path d="M2 17c0-4 3.1-7 7-7s7 3 7 7" stroke="rgba(255,255,255,.9)" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="chat-name">Asistente Bosch</div>
+          <div class="chat-status">En línea</div>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">×</button>
+    </div>
+    <div class="chat-messages" id="chatMsgs"></div>
+    <div class="chat-footer">
+      <input class="chat-input" id="chatInput" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter')sendChatMsg()">
+      <button class="chat-send" onclick="sendChatMsg()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7l12-5-5 12-2-4-5-3z" fill="white"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-bubble-btn" onclick="toggleChat()" id="chatBtn">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4h14a2 2 0 012 2v9a2 2 0 01-2 2H8l-5 3V6a2 2 0 012-2z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 10h6M8 13h4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+    <span class="chat-notif" id="chatNotif" style="display:none">1</span>
+  </button>
+</div>
+<script>
+/* ══════════════════════════════════
+   PRODUCT DATA + CSS PRODUCT IMAGES
+══════════════════════════════════ */
+const PRODUCTS = [
+  {
+    id:'cal-1', name:'Therm 6000 O WRD 11-2 G', model:'7 736 504 754',
+    category:'calentadores', userType:'hogar',
+    price:3290, priceOriginal:3990, discount:18,
+    availability:'En stock', badge:'Más vendido', badgeType:'black',
+    shortDesc:'Calentador instantáneo de paso de 6 litros/min. Ideal para 1–2 salidas simultáneas en departamentos y casas pequeñas. Encendido electrónico automático.',
+    features:['Para 1-2 puntos de agua simultáneos','Sin tanque, agua caliente al instante','Ignición electrónica automática','Gas natural y LP compatible'],
+    specs:[['Flujo nominal','6 L/min'],['Tipo de gas','Gas Natural / LP'],['Encendido','Electrónico automático'],['Puntos simultáneos','1–2'],['Garantía','2 años'],['Dimensiones','55×33×16 cm']],
+    relatedId:'cal-2', tags:['Hogar','Básico','Apartamento'],
+    rating:4.5, reviews:128, type:'heater', variant:'basic',
+    videoId:'xnZjSvKtcSI', // Bosch Therm calentador demo — reemplazar con ID real
+    crossSell:['tal-1','pul-1']
+  },
+  {
+    id:'cal-2', name:'Therm 8000 S WTD 15 AME', model:'7 736 504 757',
+    category:'calentadores', userType:'hogar_grande',
+    price:5490, priceOriginal:6200, discount:11,
+    availability:'En stock', badge:'Premium', badgeType:'blue',
+    shortDesc:'Calentador de alto rendimiento con cámara sellada para 3–4 salidas simultáneas. Control digital de temperatura, ideal para zonas cerradas.',
+    features:['Para 3-4 puntos de agua simultáneos','Cámara sellada, mayor seguridad','Control digital de temperatura','Compatible con zonas cerradas'],
+    specs:[['Flujo nominal','15 L/min'],['Tipo de gas','Gas Natural / LP'],['Encendido','Hidrogenerador automático'],['Puntos simultáneos','3–4'],['Garantía','3 años'],['Dimensiones','66×38×20 cm']],
+    relatedId:'cal-1', tags:['Familia grande','Alto rendimiento','Cámara sellada'],
+    rating:4.8, reviews:74, type:'heater', variant:'pro',
+    videoId:'j_Ld-IfZRpI', // Bosch Therm 8000 — reemplazar con ID real
+    crossSell:['tal-2','pul-1']
+  },
+  {
+    id:'tal-1', name:'GSB 12V-15 Professional', model:'0 601 9B6 901',
+    category:'taladros', userType:'hogar',
+    price:2490, priceOriginal:2990, discount:17,
+    availability:'En stock', badge:'Más vendido', badgeType:'black',
+    shortDesc:'Taladro percutor inalámbrico 12V. Perfecto para colgar cuadros, instalar muebles y trabajos domésticos. Liviano y fácil de usar, batería incluida.',
+    features:['Batería 12V 2.0 Ah incluida','Modo taladro y atornillador','21 niveles de par','Mandril 3/8" sin llave'],
+    specs:[['Voltaje','12 V'],['Velocidad','0–1,500 rpm'],['Par máximo','30 Nm'],['Mandril','3/8" sin llave'],['Batería','2.0 Ah incluida'],['Garantía','1 año']],
+    relatedId:'tal-2', tags:['Uso doméstico','Inalámbrico','12V'],
+    rating:4.6, reviews:215, type:'drill', variant:'basic',
+    videoId:'qLV_pBFGfQI', // Bosch GSB 12V demo — reemplazar con ID real
+    crossSell:['pul-1','cal-1']
+  },
+  {
+    id:'tal-2', name:'GSB 18V-55 Professional', model:'0 601 9H5 301',
+    category:'taladros', userType:'profesional',
+    price:5890, priceOriginal:6500, discount:9,
+    availability:'En stock', badge:'Pro', badgeType:'blue',
+    shortDesc:'Taladro percutor 18V motor brushless. Para concreto, mampostería y madera dura. Compatible con baterías ProCORE18V. Para uso intensivo.',
+    features:['Motor brushless de larga vida','Taladra concreto y mampostería','Velocidad variable y reversa','Compatible con batería ProCORE18V'],
+    specs:[['Voltaje','18 V'],['Velocidad','0–2,100 rpm'],['Par máximo','55 Nm'],['Mandril','1/2" sin llave'],['Batería','4.0 Ah incluida'],['Garantía','2 años']],
+    relatedId:'tal-1', tags:['Profesional','Concreto','Motor brushless'],
+    rating:4.9, reviews:98, type:'drill', variant:'pro',
+    videoId:'KnkKq8WQWUA', // Bosch GSB 18V demo — reemplazar con ID real
+    crossSell:['pul-2','cal-2']
+  },
+  {
+    id:'pul-1', name:'GWS 750 Professional', model:'0 601 394 001',
+    category:'pulidoras', userType:'hogar',
+    price:1890, priceOriginal:2290, discount:17,
+    availability:'En stock', badge:null, badgeType:null,
+    shortDesc:'Esmeriladora angular 750W para corte y desbaste en metal y piedra. Compacta, ideal para casa y talleres pequeños. Uso eventual.',
+    features:['750W de potencia','Disco 4.5" / 115 mm','Guarda protectora ajustable','Fácil cambio de disco'],
+    specs:[['Potencia','750 W'],['Velocidad sin carga','11,000 rpm'],['Disco','115 mm (4.5")'],['Peso','1.9 kg'],['Cable','2 m'],['Garantía','1 año']],
+    relatedId:'pul-2', tags:['Eléctrica','Compacta','Uso eventual'],
+    rating:4.3, reviews:162, type:'grinder', variant:'basic',
+    videoId:'nRDEKMrY03k', // Bosch GWS 750 demo — reemplazar con ID real
+    crossSell:['tal-1','cal-1']
+  },
+  {
+    id:'pul-2', name:'GWS 2200-230 Professional', model:'0 601 882 M03',
+    category:'pulidoras', userType:'profesional',
+    price:4190, priceOriginal:4800, discount:13,
+    availability:'En stock', badge:'Recomendado', badgeType:'black',
+    shortDesc:'Pulidora 2,200W para trabajo continuo pesado. Arranque suave, protección de sobrecarga. Talleres, construcción y metalurgia.',
+    features:['2,200W para trabajo continuo','Disco 9" / 230 mm','Arranque suave electrónico','Protección contra sobrecarga'],
+    specs:[['Potencia','2,200 W'],['Velocidad sin carga','6,500 rpm'],['Disco','230 mm (9")'],['Peso','5.2 kg'],['Cable','4 m'],['Garantía','2 años']],
+    relatedId:'pul-1', tags:['Alta potencia','Trabajo pesado','Profesional'],
+    rating:4.7, reviews:56, type:'grinder', variant:'pro',
+    videoId:'CRG0Zu_Mwgc', // Bosch GWS 2200 demo — reemplazar con ID real
+    crossSell:['tal-2','cal-2']
+  }
+];
+
+/* ══════════════ PRODUCT IMAGE GENERATOR (CSS art — realistic) ══════════════ */
+function prodImg(p, size=100) {
+  const {type, variant} = p;
+  const s = size;
+  if(type==='heater') {
+    const c = variant==='pro' ? '#1A4D8F' : '#3d6fa8';
+    return `<svg width="${s}" height="${s*1.3}" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hg${p.id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="${variant==='pro'?'#1A3A6B':'#2D5FA0'}"/><stop offset="40%" stop-color="${c}"/><stop offset="100%" stop-color="${variant==='pro'?'#0F2A50':'#1D4A80'}"/></linearGradient>
+        <linearGradient id="hg2${p.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,.15)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/></linearGradient>
+      </defs>
+      <rect x="22" y="4" width="56" height="90" rx="8" fill="url(#hg${p.id})"/>
+      <rect x="22" y="4" width="56" height="40" rx="8" fill="url(#hg2${p.id})"/>
+      <rect x="28" y="12" width="44" height="28" rx="4" fill="rgba(0,0,0,.25)"/>
+      <rect x="30" y="14" width="40" height="24" rx="3" fill="rgba(0,20,60,.5)"/>
+      <text x="50" y="30" text-anchor="middle" font-family="monospace" font-size="9" fill="rgba(100,200,255,.9)">BOSCH</text>
+      <text x="50" y="40" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(100,200,255,.6)">${variant==='pro'?'8000':'6000'} S</text>
+      <rect x="34" y="48" width="32" height="2" rx="1" fill="rgba(255,255,255,.15)"/>
+      <rect x="34" y="54" width="32" height="2" rx="1" fill="rgba(255,255,255,.1)"/>
+      <rect x="34" y="60" width="24" height="2" rx="1" fill="rgba(255,255,255,.08)"/>
+      <circle cx="42" cy="78" r="5" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+      <circle cx="58" cy="78" r="5" fill="#E10000" opacity=".7"/>
+      <rect x="36" y="94" width="10" height="20" rx="3" fill="#777"/>
+      <rect x="54" y="94" width="10" height="20" rx="3" fill="#777"/>
+      <rect x="24" y="97" width="52" height="10" rx="2" fill="#555"/>
+      <text x="50" y="104" text-anchor="middle" font-family="sans-serif" font-size="6" fill="rgba(255,255,255,.5)" font-weight="600">BOSCH</text>
+    </svg>`;
+  }
+  if(type==='drill') {
+    const bc = variant==='pro' ? '#1E5FA8' : '#2474C8';
+    return `<svg width="${s*1.4}" height="${s}" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="dg${p.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${variant==='pro'?'#1A4A90':'#1E6BC8'}"/><stop offset="100%" stop-color="${variant==='pro'?'#0F2D5A':'#134080'}"/></linearGradient>
+        <linearGradient id="dg2${p.id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="rgba(255,255,255,.2)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></linearGradient>
+      </defs>
+      <!-- Body -->
+      <rect x="10" y="28" width="80" height="38" rx="8" fill="url(#dg${p.id})"/>
+      <rect x="10" y="28" width="80" height="18" rx="8" fill="url(#dg2${p.id})"/>
+      <!-- Chuck -->
+      <rect x="90" y="36" width="28" height="22" rx="4" fill="#555"/>
+      <rect x="92" y="38" width="24" height="18" rx="3" fill="#444"/>
+      <rect x="118" y="41" width="8" height="12" rx="2" fill="#333"/>
+      <rect x="126" y="44" width="6" height="6" rx="1" fill="#222"/>
+      <!-- Trigger/grip -->
+      <rect x="20" y="62" width="38" height="30" rx="6" fill="${variant==='pro'?'#1A4A90':'#1E6BC8'}"/>
+      <rect x="22" y="64" width="34" height="12" rx="4" fill="rgba(255,255,255,.12)"/>
+      <!-- Battery -->
+      <rect x="18" y="89" width="44" height="10" rx="4" fill="${variant==='pro'?'#FFB300':'#1E6BC8'}"/>
+      <text x="40" y="96" text-anchor="middle" font-family="sans-serif" font-size="5" fill="${variant==='pro'?'#000':'#fff'}" font-weight="700">${variant==='pro'?'18V ProCORE':'12V'}</text>
+      <!-- Logo -->
+      <text x="46" y="46" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,.9)" font-weight="700">BOSCH</text>
+      <text x="46" y="56" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(255,255,255,.5)">${p.name.split(' ')[0]}</text>
+      <!-- Ventilation slits -->
+      <rect x="70" y="32" width="12" height="1.5" rx=".5" fill="rgba(255,255,255,.15)"/>
+      <rect x="70" y="35" width="12" height="1.5" rx=".5" fill="rgba(255,255,255,.1)"/>
+      <rect x="70" y="38" width="10" height="1.5" rx=".5" fill="rgba(255,255,255,.08)"/>
+    </svg>`;
+  }
+  if(type==='grinder') {
+    return `<svg width="${s*1.2}" height="${s}" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gg${p.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${variant==='pro'?'#1A4A90':'#555'}"/><stop offset="100%" stop-color="${variant==='pro'?'#0F2A50':'#333'}"/></linearGradient>
+        <linearGradient id="disc${p.id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#888"/><stop offset="100%" stop-color="#444"/></linearGradient>
+      </defs>
+      <!-- Body -->
+      <rect x="8" y="30" width="64" height="32" rx="10" fill="url(#gg${p.id})"/>
+      <rect x="8" y="30" width="64" height="14" rx="10" fill="rgba(255,255,255,.15)"/>
+      <!-- Side handle -->
+      <rect x="4" y="38" width="8" height="18" rx="4" fill="#444"/>
+      <!-- Gear head -->
+      <rect x="68" y="36" width="20" height="20" rx="4" fill="#333"/>
+      <circle cx="78" cy="46" r="8" fill="#444" stroke="#555" stroke-width="1"/>
+      <!-- Disc -->
+      <ellipse cx="88" cy="46" rx="4" ry="${variant==='pro'?'30':'20'}" fill="url(#disc${p.id})" transform="rotate(-5 88 46)"/>
+      <ellipse cx="88" cy="46" rx="2.5" ry="${variant==='pro'?'28':'18'}" fill="#333" transform="rotate(-5 88 46)"/>
+      <circle cx="88" cy="46" r="3" fill="#555"/>
+      <!-- Disc guard -->
+      <path d="M72 30 Q90 20 106 ${variant==='pro'?'16':'22'} L106 70 Q90 70 72 64 Z" fill="rgba(0,0,0,.4)" stroke="#555" stroke-width="1"/>
+      <!-- Logo + power rating -->
+      <text x="36" y="44" text-anchor="middle" font-family="sans-serif" font-size="7" fill="rgba(255,255,255,.9)" font-weight="700">BOSCH</text>
+      <text x="36" y="54" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(255,255,255,.5)">${variant==='pro'?'2200W':'750W'}</text>
+      <!-- Spark effect for pro -->
+      ${variant==='pro'?`<path d="M104 35 L108 30 L106 36 L110 32" stroke="#FFB300" stroke-width="1" stroke-linecap="round" opacity=".7"/>
+      <path d="M106 42 L111 40 L107 46" stroke="#FFB300" stroke-width=".8" stroke-linecap="round" opacity=".5"/>`:``}
+    </svg>`;
+  }
+  return `<svg width="${s}" height="${s}" viewBox="0 0 ${s} ${s}" fill="none"><rect width="${s}" height="${s}" fill="#f5f5f5"/><text x="${s/2}" y="${s/2+5}" text-anchor="middle" font-size="11" fill="#999">IMG</text></svg>`;
+}
+
+/* category icon */
+function catIcon(type) {
+  const icons = {
+    heater:`<svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+      <rect width="68" height="68" rx="4" fill="#EBF4FF"/>
+      <rect x="22" y="8" width="24" height="42" rx="6" fill="#2474C8" opacity=".15" stroke="#2474C8" stroke-width="1.8"/>
+      <rect x="26" y="13" width="16" height="18" rx="3" fill="#2474C8" opacity=".2" stroke="#2474C8" stroke-width="1.2"/>
+      <rect x="28" y="16" width="12" height="3" rx="1" fill="#2474C8" opacity=".5"/>
+      <rect x="28" y="21" width="8" height="2" rx="1" fill="#2474C8" opacity=".35"/>
+      <circle cx="34" cy="54" r="6" fill="none" stroke="#2474C8" stroke-width="1.8"/>
+      <circle cx="34" cy="54" r="2.5" fill="#2474C8"/>
+      <rect x="18" y="34" width="6" height="10" rx="2" fill="#2474C8" opacity=".25"/>
+      <rect x="44" y="34" width="6" height="10" rx="2" fill="#2474C8" opacity=".25"/>
+      <text x="34" y="31" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#2474C8" opacity=".6">BOSCH</text>
+    </svg>`,
+    drill:`<svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+      <rect width="68" height="68" rx="4" fill="#E8F0FB"/>
+      <rect x="6" y="22" width="40" height="20" rx="7" fill="#1A4A90" opacity=".12" stroke="#1A4A90" stroke-width="1.8"/>
+      <rect x="8" y="24" width="14" height="16" rx="4" fill="#E10000" opacity=".18" stroke="#E10000" stroke-width="1.2"/>
+      <path d="M46 26h14a3 3 0 010 16H46" stroke="#1A4A90" stroke-width="2" stroke-linecap="round"/>
+      <path d="M60 34h4" stroke="#1A4A90" stroke-width="2" stroke-linecap="round"/>
+      <rect x="8" y="42" width="36" height="16" rx="5" fill="#1A4A90" opacity=".1" stroke="#1A4A90" stroke-width="1.5"/>
+      <rect x="10" y="55" width="30" height="8" rx="3" fill="#FFB300" opacity=".7"/>
+      <text x="25" y="61" text-anchor="middle" font-family="sans-serif" font-size="5" font-weight="700" fill="#333" opacity=".7">18V</text>
+      <text x="26" y="36" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="700" fill="#1A4A90" opacity=".7">BOSCH</text>
+    </svg>`,
+    grinder:`<svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+      <rect width="68" height="68" rx="4" fill="#F0F0F0"/>
+      <rect x="8" y="24" width="44" height="22" rx="8" fill="#333" opacity=".15" stroke="#333" stroke-width="1.8"/>
+      <rect x="10" y="26" width="42" height="10" rx="5" fill="rgba(255,255,255,.5)"/>
+      <rect x="52" y="28" width="10" height="14" rx="3" fill="#444" opacity=".7"/>
+      <ellipse cx="57" cy="35" rx="3" ry="20" fill="#666" opacity=".5" transform="rotate(-8 57 35)"/>
+      <ellipse cx="57" cy="35" rx="1.5" ry="17" fill="#333" opacity=".4" transform="rotate(-8 57 35)"/>
+      <circle cx="57" cy="35" r="3" fill="#555" opacity=".6"/>
+      <rect x="4" y="30" width="8" height="12" rx="4" fill="#555" opacity=".5"/>
+      <text x="28" y="38" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#333" opacity=".7">BOSCH</text>
+      <text x="28" y="47" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#333" opacity=".4">750W</text>
+    </svg>`,
+    battery:`<svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+      <rect width="68" height="68" rx="4" fill="#FFFBE6"/>
+      <rect x="8" y="20" width="46" height="28" rx="5" fill="#FFB300" opacity=".15" stroke="#FFB300" stroke-width="1.8"/>
+      <path d="M54 29v10h4a2 2 0 000-10h-4z" fill="#FFB300" opacity=".6"/>
+      <rect x="14" y="26" width="8" height="16" rx="2" fill="#FFB300" opacity=".5"/>
+      <rect x="26" y="26" width="8" height="16" rx="2" fill="#FFB300" opacity=".35"/>
+      <rect x="38" y="26" width="8" height="16" rx="2" fill="#FFB300" opacity=".2"/>
+      <text x="34" y="56" text-anchor="middle" font-family="sans-serif" font-size="7" font-weight="700" fill="#FFB300" opacity=".7">ProCORE18V</text>
+    </svg>`,
+    measure:`<svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+      <rect width="68" height="68" rx="4" fill="#EDF5F0"/>
+      <rect x="22" y="8" width="24" height="44" rx="5" fill="#00884A" opacity=".12" stroke="#00884A" stroke-width="1.8"/>
+      <rect x="26" y="13" width="16" height="20" rx="3" fill="#00884A" opacity=".2"/>
+      <rect x="28" y="15" width="12" height="2" rx="1" fill="#00884A" opacity=".5"/>
+      <rect x="28" y="19" width="8" height="2" rx="1" fill="#00884A" opacity=".35"/>
+      <rect x="28" y="23" width="10" height="2" rx="1" fill="#00884A" opacity=".35"/>
+      <circle cx="34" cy="40" r="5" fill="none" stroke="#00884A" stroke-width="1.5"/>
+      <path d="M34 37v3l2 2" stroke="#00884A" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>`
+  };
+  return icons[type]||icons.measure;
+}
+
+/* ══ BUNDLES DATA ══ */
+const BUNDLES = [
+  {
+    id:'bundle-1',
+    name:'Kit Taladro + Puntas Profesional',
+    desc:'El combo más vendido: GSB 12V con kit de 25 puntas HSS y tornillos. Todo lo que necesitas para instalar muebles, colgar cuadros y más.',
+    products:['tal-1'],
+    kitItem:{name:'Kit de puntas HSS 25 pzas',price:390},
+    price:2690, original:2880, save:190,
+    badge:'MÁS VENDIDO',
+    units:'3,759 kits vendidos',
+    type:'drill', variant:'basic'
+  },
+  {
+    id:'bundle-2',
+    name:'Bundle Pro: Taladro 18V + Esmeriladora',
+    desc:'La combinación perfecta para proyectos serios. GSB 18V + GWS 750W. Ahorra $890 vs comprar por separado.',
+    products:['tal-2','pul-1'],
+    price:7190, original:8080, save:890,
+    badge:'AHORRA $890',
+    units:'Kit profesional completo',
+    type:'drill', variant:'pro'
+  }
+];
+
+/* ══ COUPON SYSTEM ══ */
+const VALID_COUPONS = {
+  'BOSCH10': {desc:'Primera compra', discount:0.10, label:'10% descuento primera compra'},
+  'VUELVE5': {desc:'Segunda compra', discount:0.05, label:'5% + envío gratis segunda compra'},
+  'BUNDLE15':{desc:'Bundle/Kit',     discount:0.15, label:'15% en kits y bundles'},
+  'JUNIO20': {desc:'Flash sale junio',discount:0.20, label:'20% descuento Flash Sale'},
+  'PROMO10': {desc:'Promoción',      discount:0.10, label:'10% descuento promocional'}
+};
+let appliedCoupon=null;
+
+function applyCoupon(){
+  const code=document.getElementById('couponInput').value.trim().toUpperCase();
+  const coupon=VALID_COUPONS[code];
+  const appliedEl=document.getElementById('couponApplied');
+  const appliedText=document.getElementById('couponAppliedText');
+  const couponDiscRow=document.getElementById('couponDiscRow');
+  const couponDiscLabel=document.getElementById('couponDiscLabel');
+  const couponDiscAmt=document.getElementById('couponDiscAmt');
+  if(coupon){
+    appliedCoupon={code,coupon};
+    appliedEl.style.display='flex';
+    appliedText.textContent=`Cupón ${code} aplicado — ${coupon.label}`;
+    couponDiscRow.style.display='flex';
+    couponDiscLabel.textContent=`Cupón ${code}`;
+    const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const disc=Math.round(sub*coupon.discount);
+    couponDiscAmt.textContent=`-$${disc.toLocaleString()}`;
+    const total=sub-disc;
+    document.getElementById('sumTotal').textContent='$'+total.toLocaleString();
+    showToast(`✓ Cupón ${code} aplicado — ${Math.round(coupon.discount*100)}% de descuento`);
+  } else {
+    appliedEl.style.display='none';
+    appliedCoupon=null;
+    couponDiscRow.style.display='none';
+    showToast('Cupón no válido. Intenta con BOSCH10');
+  }
+}
+
+function copyCoupon(code, btn){
+  navigator.clipboard.writeText(code).catch(()=>{});
+  const orig=btn.textContent;
+  if(btn.tagName==='BUTTON'){btn.textContent='¡Copiado!';setTimeout(()=>btn.textContent=orig,1800);}
+  // Autofill if cart is open
+  const input=document.getElementById('couponInput');
+  if(input) input.value=code;
+  showToast(`Código ${code} copiado al portapapeles`);
+}
+
+/* ══ BUNDLES RENDER ══ */
+function renderBundles(){
+  const grid=document.getElementById('bundlesGrid');
+  if(!grid) return;
+  grid.innerHTML=BUNDLES.map(b=>{
+    const prods=b.products.map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+    const mainProd=prods[0]||{type:b.type,variant:b.variant,id:b.id};
+    const secondProd=prods[1];
+    return `<div class="bundle-card" onclick="addBundle('${b.id}')">
+      ${b.badge?`<div class="bundle-badge">${b.badge}</div>`:''}
+      <div class="bundle-products">
+        <div class="bundle-prod-img" style="transform:scale(1.1)">${prodImg(mainProd,60)}</div>
+        ${secondProd?`<div class="bundle-plus">+</div><div class="bundle-prod-img">${prodImg(secondProd,52)}</div>`:`<div class="bundle-plus">+</div><div class="bundle-prod-img" style="background:var(--g05);border:1px dashed var(--g20);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="8" width="20" height="14" rx="3" stroke="#ccc" stroke-width="1.5"/><path d="M9 8V6a2 2 0 014 0v2M15 8V6a2 2 0 014 0v2" stroke="#ccc" stroke-width="1.3"/></svg></div>`}
+      </div>
+      <div class="bundle-name">${b.name}</div>
+      <div class="bundle-desc">${b.desc}</div>
+      <div style="font-size:10px;color:var(--g40);margin-bottom:8px">${b.units}</div>
+      <div class="bundle-pricing">
+        <span class="bundle-price">$${b.price.toLocaleString()}</span>
+        <span class="bundle-original">$${b.original.toLocaleString()}</span>
+        <span class="bundle-save">Ahorras $${b.save.toLocaleString()}</span>
+      </div>
+      <button class="btn-primary" style="width:100%;padding:11px" onclick="event.stopPropagation();addBundle('${b.id}')">Agregar kit al carrito</button>
+    </div>`;
+  }).join('');
+}
+
+function addBundle(bid){
+  const b=BUNDLES.find(x=>x.id===bid); if(!b) return;
+  // Add each product in bundle
+  b.products.forEach(pid=>{
+    const p=PRODUCTS.find(pr=>pr.id===pid); if(!p) return;
+    const ex=cart.find(i=>i.id===pid);
+    if(ex)ex.qty++;else cart.push({...p,qty:1});
+  });
+  updateCartUI();
+  showToast(`Kit "${b.name.split(' ').slice(0,3).join(' ')}" agregado al carrito`);
+  setTimeout(()=>triggerChatCrossSellBundle(b),900);
+}
+
+function triggerChatCrossSellBundle(b){
+  if(!chatOpen) toggleChat();
+  setTimeout(()=>{
+    appendTyping();
+    setTimeout(()=>{
+      removeTyping();
+      appendBotMsg(`🛠️ ¡Excelente kit! Compraste el <strong>${b.name}</strong>. ¿Necesitas algo más para completar tu proyecto?`);
+      setTimeout(()=>{
+        appendBotMsgWithOptions('¿Qué tipo de proyecto tienes?',[
+          {label:'Remodelación en casa',action:()=>{appendUserMsg('Remodelación en casa');setTimeout(()=>{appendTyping();setTimeout(()=>{removeTyping();appendBotMsg('Para remodelación en casa, un calentador de paso puede ser el próximo paso si estás renovando baños o cocina:');appendProductSuggest(PRODUCTS.find(p=>p.id==='cal-1'));},900);},400);}},
+          {label:'Taller / trabajo profesional',action:()=>{appendUserMsg('Taller / trabajo profesional');setTimeout(()=>{appendTyping();setTimeout(()=>{removeTyping();appendBotMsg('Para trabajo profesional, complementa con una pulidora de mayor potencia:');appendProductSuggest(PRODUCTS.find(p=>p.id==='pul-2'));},900);},400);}},
+        ]);
+      },600);
+    },1000);
+  },500);
+}
+
+/* ══ CART CROSS-SELL PANEL ══ */
+function renderCartCrossSell(){
+  const panel=document.getElementById('cartCrossSell');
+  const itemsEl=document.getElementById('cartCsItems');
+  if(!panel||!itemsEl||!cart.length){if(panel)panel.style.display='none';return;}
+  // Get cross-sell products based on what's in cart
+  const cartIds=cart.map(i=>i.id);
+  const csIds=new Set();
+  cart.forEach(item=>{
+    (item.crossSell||[]).forEach(id=>{if(!cartIds.includes(id))csIds.add(id);});
+  });
+  const csProds=[...csIds].slice(0,3).map(id=>PRODUCTS.find(p=>p.id===id)).filter(Boolean);
+  if(!csProds.length){panel.style.display='none';return;}
+  panel.style.display='block';
+  const catL={calentadores:'Calentador',taladros:'Taladro',pulidoras:'Esmeriladora'};
+  itemsEl.innerHTML=csProds.map(p=>`
+    <div class="cart-cs-item">
+      <div class="cart-cs-img">${prodImg(p,40)}</div>
+      <div class="cart-cs-info">
+        <div class="cart-cs-tag">${catL[p.category]||''} · ${p.discount?p.discount+'% OFF':''}</div>
+        <div class="cart-cs-name">${p.name}</div>
+        <div class="cart-cs-price">$${p.price.toLocaleString()}</div>
+      </div>
+      <button class="cart-cs-add" onclick="addCart('${p.id}')">+ Agregar</button>
+    </div>`).join('');
+}
+
+/* ══ FLASH SALE TIMER ══ */
+function startFlashTimer(){
+  const el=document.getElementById('flashTimer');
+  const bar=document.getElementById('flashSaleBar');
+  if(!el) return;
+  // Activate flash sale bar (toggle to true for demo during june/nov-dec)
+  const m=new Date().getMonth();
+  if(m===5||m===10||m===11){bar.style.display='flex';}
+  let secs=2*3600+47*60+33; // demo: 2h47m33s
+  setInterval(()=>{
+    secs=Math.max(0,secs-1);
+    const h=Math.floor(secs/3600), mn=Math.floor((secs%3600)/60), s=secs%60;
+    el.textContent=`${String(h).padStart(2,'0')}:${String(mn).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  },1000);
+}
+
+
+function prodCardHTML(p, onclickFn) {
+  const catLabel = {calentadores:'Calentadores',taladros:'Taladros',pulidoras:'Pulidoras'};
+  return `<div class="product-card" onclick="${onclickFn}">
+    <div class="product-card-img" style="background:#f2f4f8;padding:12px;">
+      ${p.badge?`<div class="product-badge badge-${p.badgeType}">${p.badge}</div>`:''}
+      <div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%">${prodImg(p,110)}</div>
+    </div>
+    <div class="product-card-body">
+      <div class="product-cat-tag">${catLabel[p.category]}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-pricing">
+        <span class="price-current">$${p.price.toLocaleString()}</span>
+        ${p.priceOriginal?`<span class="price-original">$${p.priceOriginal.toLocaleString()}</span>`:''}
+        ${p.discount?`<span class="price-discount">-${p.discount}%</span>`:''}
+      </div>
+      <div class="product-avail">${p.availability}</div>
+      <button class="product-card-cta" onclick="event.stopPropagation();addCart('${p.id}')">Agregar al carrito</button>
+    </div>
+  </div>`;
+}
+
+function renderFeatured(){
+  document.getElementById('featuredGrid').innerHTML = PRODUCTS.map(p=>prodCardHTML(p,`showProd('${p.id}')`)).join('');
+}
+function renderHeroProd(){
+  const picks=[PRODUCTS[2],PRODUCTS[0],PRODUCTS[4],PRODUCTS[3]];
+  const catL={calentadores:'Calentadores',taladros:'Taladros',pulidoras:'Pulidoras'};
+  document.getElementById('heroProds').innerHTML=picks.map(p=>`
+    <div class="hero-prod-card" onclick="showProd('${p.id}')">
+      <div class="hero-prod-img">${prodImg(p,52)}</div>
+      <div class="hero-prod-cat">${catL[p.category]}</div>
+      <div class="hero-prod-name">${p.name}</div>
+      <div class="hero-prod-price">$${p.price.toLocaleString()}</div>
+    </div>`).join('');
+}
+function renderCatIcons(){
+  const types=['heater','drill','grinder','battery','measure'];
+  types.forEach((t,i)=>{
+    const el=document.getElementById('catImg'+i);
+    if(el) el.innerHTML=catIcon(t);
+  });
+}
+
+/* ══════════ CATEGORY ══════════ */
+let currentCat=null, currentCatFilter='all';
+function showCat(cat){
+  currentCat=cat; currentCatFilter='all';
+  const labels={calentadores:'Calentadores de agua',taladros:'Taladros y atornilladores',pulidoras:'Esmeriles y pulidoras',all:'Todo el catálogo'};
+  const subs={calentadores:'Agua caliente al instante para tu hogar',taladros:'Para cada proyecto en casa o trabajo',pulidoras:'Potencia y precisión para metal y madera',all:'Todos los productos disponibles'};
+  document.getElementById('catTitle').textContent=labels[cat]||'Productos';
+  document.getElementById('catSub').textContent=subs[cat]||'';
+  document.getElementById('catBcr').innerHTML=`<span onclick="nav('home')">Inicio</span><span class="breadcrumb-sep">›</span><span>${labels[cat]||'Categoría'}</span>`;
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  document.querySelector('.filter-pill').classList.add('active');
+  renderCatGrid();
+  nav('category');
+}
+function filterCat(type,btn){
+  currentCatFilter=type;
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  renderCatGrid();
+}
+function renderCatGrid(){
+  let items=currentCat==='all'?[...PRODUCTS]:PRODUCTS.filter(p=>p.category===currentCat);
+  if(currentCatFilter==='hogar') items=items.filter(p=>p.userType==='hogar');
+  else if(currentCatFilter==='profesional') items=items.filter(p=>p.userType==='profesional');
+  else if(currentCatFilter==='discount') items=items.filter(p=>p.discount>0);
+  else if(currentCatFilter==='low') items=[...items].sort((a,b)=>a.price-b.price);
+  else if(currentCatFilter==='high') items=[...items].sort((a,b)=>b.price-a.price);
+  document.getElementById('catGrid').innerHTML=items.map(p=>prodCardHTML(p,`showProd('${p.id}')`)).join('');
+}
+
+/* ══════════ PRODUCT PAGE ══════════ */
+let currentProdId=null;
+const catLabelMap={calentadores:'Calentadores de agua',taladros:'Taladros',pulidoras:'Esmeriles y pulidoras'};
+function showProd(id){
+  currentProdId=id;
+  const p=PRODUCTS.find(pr=>pr.id===id); if(!p) return;
+  // Reset video
+  currentVideoId=p.videoId||'';
+  const cover=document.getElementById('videoCover');
+  const slot=document.getElementById('videoEmbedSlot');
+  if(cover){cover.style.display='flex';slot.style.display='none';slot.innerHTML='';}
+  document.getElementById('prodBcr').innerHTML=`<span onclick="nav('home')">Inicio</span><span class="breadcrumb-sep">›</span><span onclick="showCat('${p.category}')">${catLabelMap[p.category]}</span><span class="breadcrumb-sep">›</span><span>${p.name}</span>`;
+  // Gallery
+  const main=document.getElementById('gallMain');
+  main.innerHTML=`<div style="transform:scale(1.25);display:flex;align-items:center;justify-content:center">${prodImg(p,110)}</div><div class="gallery-label">Imagen referencial — reemplazar con foto PNG</div>`;
+  const thumbs=document.getElementById('gallThumbs');
+  thumbs.innerHTML=[1,2,3].map((_,i)=>`<div class="gallery-thumb ${i===0?'active':''}" onclick="selThumb(this)">${prodImg(p,42)}</div>`).join('');
+  // Related
+  const rel=PRODUCTS.find(pr=>pr.id===p.relatedId);
+  document.getElementById('prodPanel').innerHTML=`
+    <div class="product-page-tag">${catLabelMap[p.category]}</div>
+    <h1 class="product-page-name">${p.name}</h1>
+    <div class="product-page-model">Ref: ${p.model}</div>
+    <div class="product-page-rating">
+      <span class="stars">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}</span>
+      <span class="rating-num">${p.rating}</span>
+      <span class="rating-count">(${p.reviews} reseñas)</span>
+    </div>
+    <div class="product-page-price">
+      <span class="pp-price">$${p.price.toLocaleString()}</span>
+      ${p.priceOriginal?`<span class="pp-original">$${p.priceOriginal.toLocaleString()}</span>`:''}
+      ${p.discount?`<span class="pp-discount">-${p.discount}%</span>`:''}
+    </div>
+    <div class="product-page-avail">${p.availability} — Listo para envío inmediato</div>
+    <div class="product-page-desc">${p.shortDesc}</div>
+    <div style="margin-bottom:18px">${p.features.map(f=>`<div class="feature-row">${f}</div>`).join('')}</div>
+    <div class="product-ctas">
+      <button class="btn-primary" onclick="addCart('${p.id}');nav('cart')">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1 1h2l1.4 7A2 2 0 006.2 9.5h6a2 2 0 001.96-1.6L15 4H4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="6.5" cy="13" r="1.2" fill="currentColor"/><circle cx="12.5" cy="13" r="1.2" fill="currentColor"/></svg>
+        Agregar al carrito
+      </button>
+      <button class="btn-secondary" onclick="addCart('${p.id}');nav('checkout')">Comprar ahora</button>
+    </div>
+    <div class="product-guarantee">
+      <div class="guarantee-item"><span class="guarantee-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4l4-2.5 3 1.8L13 1.5 16 4v7l-7 4-7-4V4z" stroke="#666" stroke-width="1.1"/></svg></span>Envío gratis desde $999</div>
+      <div class="guarantee-item"><span class="guarantee-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1l2 6h6l-5 3.5 2 6L9 13l-5 3.5 2-6L1 7h6L9 1z" stroke="#666" stroke-width="1.1"/></svg></span>Garantía oficial</div>
+      <div class="guarantee-item"><span class="guarantee-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M16 9a7 7 0 11-14 0" stroke="#666" stroke-width="1.1" stroke-linecap="round"/><path d="M12 5l4 4-4 4" stroke="#666" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>30 días devolución</div>
+    </div>
+    <button class="specs-toggle" onclick="toggleSpecs(this)"><span>Especificaciones técnicas</span><span>▼</span></button>
+    <div class="specs-body" id="specsBody">
+      ${p.specs.map(s=>`<div class="specs-row"><span class="specs-key">${s[0]}</span><span class="specs-val">${s[1]}</span></div>`).join('')}
+    </div>
+    ${rel?`<div class="related-card" onclick="showProd('${rel.id}')">
+      <div style="width:52px;height:52px;display:flex;align-items:center;justify-content:center;overflow:hidden">${prodImg(rel,42)}</div>
+      <div style="flex:1"><div style="font-size:10px;color:var(--g40);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">También te puede interesar</div>
+      <div style="font-size:13px;font-weight:600;color:var(--black)">${rel.name}</div>
+      <div style="font-size:13px;color:var(--g60)">$${rel.price.toLocaleString()}</div></div>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="#E10000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>`:''}`;
+  nav('product');
+}
+function selThumb(el){document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));el.classList.add('active')}
+function toggleSpecs(btn){const b=btn.nextElementSibling;const o=b.style.display!=='none';b.style.display=o?'none':'block';btn.querySelector('span:last-child').textContent=o?'▼':'▲'}
+
+let currentVideoId='';
+function playVideo(){
+  const cover=document.getElementById('videoCover');
+  const slot=document.getElementById('videoEmbedSlot');
+  if(!currentVideoId){return;}
+  cover.style.display='none';
+  slot.style.display='block';
+  slot.innerHTML=`<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${currentVideoId}?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>`;
+}
+
+/* ══════════ ASSISTANT ══════════ */
+const QS=[
+  {id:'q1',num:'1 de 3',key:'category',text:'¿Qué quieres hacer?',hint:'Elige la tarea que más se parece a lo que necesitas',
+    answers:[{type:'heater',label:'Agua caliente en casa',desc:'Regadera, lavabo o fregadero',value:'calentadores'},
+             {type:'drill',label:'Agujeros o tornillos',desc:'Colgar cosas, armar muebles...',value:'taladros'},
+             {type:'grinder',label:'Pulir, cortar o desbastar',desc:'Metal, piedra, madera...',value:'pulidoras'}]},
+  {id:'q2',num:'2 de 3',key:'uso',text:'¿Cómo lo vas a usar?',hint:'Esto define la potencia que necesitas',
+    answers:[{type:'heater',label:'En casa, uso normal',desc:'Ocasional o diario en el hogar',value:'hogar'},
+             {type:'drill',label:'Trabajo frecuente',desc:'Uso intensivo o profesional',value:'profesional'}]},
+  {id:'q3',num:'3 de 3',key:'tamano',text:'¿Cuánto necesitas cubrir?',hint:'Para elegir la capacidad ideal',
+    answers:[{type:'heater',label:'Poco / básico',desc:'1–2 personas o uso puntual',value:'basico'},
+             {type:'drill',label:'Moderado o grande',desc:'3+ personas o uso exigente',value:'grande'}]}
+];
+let aAnswers={},aStep=0;
+function getRecProd(a){
+  const {category:cat,uso,tamano:tam}=a;
+  let mId,altId;
+  if(cat==='calentadores'){mId=(tam==='grande'||uso==='profesional')?'cal-2':'cal-1';altId=mId==='cal-1'?'cal-2':'cal-1';}
+  else if(cat==='taladros'){mId=(uso==='profesional'||tam==='grande')?'tal-2':'tal-1';altId=mId==='tal-1'?'tal-2':'tal-1';}
+  else{mId=(uso==='profesional'||tam==='grande')?'pul-2':'pul-1';altId=mId==='pul-1'?'pul-2':'pul-1';}
+  return{main:PRODUCTS.find(p=>p.id===mId),alt:PRODUCTS.find(p=>p.id===altId)};
+}
+function renderAssistant(){
+  const sLbls=['¿Qué necesitas?','¿Cómo lo usarás?','¿Qué tanto?'];
+  document.getElementById('asstProgress').innerHTML=sLbls.map((s,i)=>`
+    ${i>0?`<div class="progress-line ${i<=aStep?'done':''}"></div>`:''}
+    <div class="progress-step ${i<aStep?'done':i===aStep?'active':''}">
+      <div class="progress-dot">${i<aStep?'✓':i+1}</div><span>${s}</span>
+    </div>`).join('');
+  const body=document.getElementById('asstBody');
+  if(aStep<QS.length){
+    const q=QS[aStep];
+    body.innerHTML=`<div class="question-card fade-in">
+      <div class="question-num">Pregunta ${q.num}</div>
+      <div class="question-text">${q.text}</div>
+      <div class="question-hint">${q.hint}</div>
+      <div class="answer-grid ${q.answers.length===3?'answer-grid-3':''}">
+        ${q.answers.map(a=>`<div class="answer-card" onclick="aAnsw('${q.key}','${a.value}')">
+          <div class="answer-icon">${catIcon(a.type)}</div>
+          <div class="answer-label">${a.label}</div>
+          <div class="answer-desc">${a.desc}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  } else {
+    const {main,alt}=getRecProd(aAnswers);
+    const compRows=[['Precio',`$${main.price.toLocaleString()}`,`$${alt.price.toLocaleString()}`],
+      ...main.specs.slice(0,4).map((s,i)=>[s[0],s[1],alt.specs[i]?alt.specs[i][1]:'—']),
+      ['Garantía',main.specs.find(s=>s[0]==='Garantía')?.[1]||'—',alt.specs.find(s=>s[0]==='Garantía')?.[1]||'—']];
+    body.innerHTML=`<div class="fade-in">
+      <div style="font-size:12px;color:var(--g60);margin-bottom:14px;display:flex;align-items:center;gap:7px;">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#00884A" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3.5" stroke="#00884A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Basado en tus respuestas, esta es tu mejor opción:
+      </div>
+      <div class="recommendation-card">
+        <div class="rec-header"><div><div class="rec-label">Recomendación principal</div></div><div class="rec-match">✓ Ideal para tu caso</div></div>
+        <div class="rec-body">
+          <div class="rec-img">${prodImg(main,80)}</div>
+          <div><div class="rec-name">${main.name}</div><div class="rec-price">$${main.price.toLocaleString()}</div>
+          <div class="rec-tags">${main.tags.map(t=>`<span class="rec-tag">${t}</span>`).join('')}</div>
+          <div style="font-size:12px;color:var(--g60);line-height:1.5">${main.shortDesc.slice(0,80)}…</div></div>
+        </div>
+        <div class="rec-footer"><button class="btn-primary" onclick="showProd('${main.id}')">Ver producto →</button><button class="btn-secondary" onclick="addCart('${main.id}');nav('cart')">Al carrito</button></div>
+      </div>
+      <div style="font-size:11px;font-weight:600;color:var(--g60);margin:16px 0 8px;text-transform:uppercase;letter-spacing:.06em">También podrías considerar:</div>
+      <div class="recommendation-card">
+        <div class="rec-header" style="background:var(--g80)"><div class="rec-label">Alternativa</div><div class="rec-match" style="font-size:11px">Segunda opción</div></div>
+        <div class="rec-body"><div class="rec-img">${prodImg(alt,80)}</div>
+          <div><div class="rec-name">${alt.name}</div><div class="rec-price">$${alt.price.toLocaleString()}</div>
+          <div class="rec-tags">${alt.tags.map(t=>`<span class="rec-tag">${t}</span>`).join('')}</div></div>
+        </div>
+        <div class="rec-footer"><button class="btn-outline-red" onclick="showProd('${alt.id}')">Ver alternativa →</button></div>
+      </div>
+      <div style="font-size:13px;font-weight:700;color:var(--black);margin:20px 0 8px">Comparación directa</div>
+      <div class="comparison-table">
+        <div class="comp-header"><div class="comp-header-cell">Característica</div><div class="comp-header-cell highlight">★ ${main.name}</div><div class="comp-header-cell">${alt.name}</div></div>
+        ${compRows.map(r=>`<div class="comp-row"><div class="comp-cell">${r[0]}</div><div class="comp-cell comp-highlight">${r[1]}</div><div class="comp-cell">${r[2]}</div></div>`).join('')}
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:6px">
+        <button class="btn-secondary" onclick="aStep=0;aAnswers={};renderAssistant()">← Reiniciar</button>
+        <button class="btn-primary" onclick="showProd('${main.id}')">Ver mi recomendación →</button>
+      </div>
+    </div>`;
+  }
+}
+function aAnsw(key,val){aAnswers[key]=val;aStep++;renderAssistant();}
+
+/* ══════════ CART ══════════ */
+let cart=[];
+function addCart(id){
+  const p=PRODUCTS.find(pr=>pr.id===id);if(!p)return;
+  const ex=cart.find(i=>i.id===id);
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  updateCartUI();
+  showToast(p.name.split(' ').slice(0,3).join(' ')+' agregado al carrito');
+  // trigger cross-sell chat
+  setTimeout(()=>triggerChatCrossSell(p),800);
+}
+function updateCartUI(){
+  const total=cart.reduce((s,i)=>s+i.qty,0);
+  const b=document.getElementById('cartBadge');
+  b.textContent=total;b.classList.toggle('show',total>0);
+  renderCart();updateChkSummary();
+}
+function renderCart(){
+  const list=document.getElementById('cartList');
+  const cnt=document.getElementById('cartCount');
+  const btn=document.getElementById('checkoutBtn');
+  cnt.textContent=cart.reduce((s,i)=>s+i.qty,0);
+  if(!cart.length){
+    list.innerHTML=`<div class="cart-empty"><div style="margin-bottom:14px;opacity:.3"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><path d="M4 4h8l4.5 22H42" stroke="#ccc" stroke-width="2" stroke-linecap="round"/><path d="M14 14h32l-4 14H18L14 14z" stroke="#ccc" stroke-width="2" stroke-linejoin="round"/><circle cx="22" cy="46" r="3" stroke="#ccc" stroke-width="2"/><circle cx="38" cy="46" r="3" stroke="#ccc" stroke-width="2"/></svg></div>
+      <div style="font-size:15px;font-weight:500;color:var(--g40);margin-bottom:8px">Tu carrito está vacío</div>
+      <button class="btn-primary" onclick="nav('home')" style="margin-top:12px">Ver productos</button></div>`;
+    btn.disabled=true;btn.style.opacity='.4';
+  } else {
+    list.innerHTML=cart.map(item=>`<div class="cart-item">
+      <div class="cart-item-img">${prodImg(item,54)}</div>
+      <div><div class="cart-item-name">${item.name}</div><div class="cart-item-model">Ref: ${item.model}</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="cart-qty"><button class="qty-btn" onclick="chgQty('${item.id}',-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="chgQty('${item.id}',1)">+</button></div>
+          <button class="cart-remove" onclick="rmCart('${item.id}')">✕</button>
+        </div>
+      </div>
+      <div class="cart-item-price">$${(item.price*item.qty).toLocaleString()}</div>
+    </div>`).join('');
+    btn.disabled=false;btn.style.opacity='1';
+  }
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const disc=cart.reduce((s,i)=>s+(i.priceOriginal?(i.priceOriginal-i.price)*i.qty:0),0);
+  document.getElementById('sumSub').textContent='$'+sub.toLocaleString();
+  document.getElementById('sumDisc').textContent='-$'+Math.round(disc).toLocaleString();
+  document.getElementById('sumTotal').textContent='$'+sub.toLocaleString();
+  document.getElementById('sumDiscRow').style.display=disc>0?'flex':'none';
+  // Reset coupon if cart changed
+  appliedCoupon=null;
+  const couponApplied=document.getElementById('couponApplied');
+  const couponDiscRow=document.getElementById('couponDiscRow');
+  if(couponApplied)couponApplied.style.display='none';
+  if(couponDiscRow)couponDiscRow.style.display='none';
+  const couponInput=document.getElementById('couponInput');
+  if(couponInput)couponInput.value='';
+  // Cart cross-sell panel
+  renderCartCrossSell();
+}
+function chgQty(id,d){const it=cart.find(i=>i.id===id);if(!it)return;it.qty=Math.max(0,it.qty+d);if(!it.qty)cart=cart.filter(i=>i.id!==id);updateCartUI();}
+function rmCart(id){cart=cart.filter(i=>i.id!==id);updateCartUI();}
+
+/* ══════════ CHECKOUT ══════════ */
+let chkStep=1,chkData={};
+function updateChkSummary(){
+  const items=document.getElementById('chkItems');
+  const tot=document.getElementById('chkTotal');
+  if(!items)return;
+  items.innerHTML=cart.map(i=>`<div class="order-review-item"><div class="order-review-img">${prodImg(i,30)}</div><div class="order-review-name">${i.name} ×${i.qty}</div><div class="order-review-price">$${(i.price*i.qty).toLocaleString()}</div></div>`).join('');
+  if(tot)tot.textContent='$'+cart.reduce((s,i)=>s+i.price*i.qty,0).toLocaleString();
+}
+function renderChk(){chkStep=1;renderChkStep();}
+function chkStepsBar(){
+  const lbls=['Tus datos','Envío','Confirmar'];
+  return`<div class="checkout-steps">${lbls.map((l,i)=>`${i>0?`<div class="checkout-step-line ${i<chkStep?'done':''}"></div>`:''}
+    <div class="checkout-step ${i+1===chkStep?'active':i+1<chkStep?'done':''}">
+      <div class="checkout-step-num">${i+1<chkStep?'✓':i+1}</div><span>${l}</span>
+    </div>`).join('')}</div>`;
+}
+function renderChkStep(){
+  document.getElementById('chkSteps').innerHTML=chkStepsBar();
+  updateChkSummary();
+  const area=document.getElementById('chkForm');
+  if(chkStep===1){
+    area.innerHTML=`<div class="checkout-form fade-in"><div class="checkout-form-title">Tus datos</div>
+      <div class="form-row-2"><div><label class="form-label">Nombre</label><input class="form-input" id="fn" placeholder="Ana" value="${chkData.fn||''}"></div><div><label class="form-label">Apellido</label><input class="form-input" id="ln" placeholder="García" value="${chkData.ln||''}"></div></div>
+      <div class="form-row"><label class="form-label">Correo</label><input class="form-input" id="em" type="email" placeholder="ana@ejemplo.com" value="${chkData.em||''}"></div>
+      <div class="form-row"><label class="form-label">Teléfono</label><input class="form-input" id="ph" type="tel" placeholder="33 1234 5678" value="${chkData.ph||''}"></div>
+      <div class="checkout-nav"><button class="btn-secondary" onclick="nav('cart')">← Volver</button><button class="btn-primary" onclick="valStep1()">Continuar →</button></div>
+    </div>`;
+  } else if(chkStep===2){
+    area.innerHTML=`<div class="checkout-form fade-in"><div class="checkout-form-title">Dirección de envío</div>
+      <div class="form-row"><label class="form-label">Calle y número</label><input class="form-input" id="st" placeholder="Av. Principal 123" value="${chkData.st||''}"></div>
+      <div class="form-row-2"><div><label class="form-label">Colonia</label><input class="form-input" id="col" placeholder="Centro" value="${chkData.col||''}"></div><div><label class="form-label">C.P.</label><input class="form-input" id="cp" placeholder="44100" value="${chkData.cp||''}"></div></div>
+      <div class="form-row-2"><div><label class="form-label">Ciudad</label><input class="form-input" id="cty" placeholder="Guadalajara" value="${chkData.cty||''}"></div><div><label class="form-label">Estado</label><select class="form-select" id="stt"><option value="">Selecciona</option>${['Jalisco','CDMX','Nuevo León','Estado de México','Puebla','Guanajuato'].map(s=>`<option ${chkData.stt===s?'selected':''}>${s}</option>`).join('')}</select></div></div>
+      <div style="margin:14px 0 6px"><label class="form-label">Método de envío</label></div>
+      <div class="shipping-option ${!chkData.ship||chkData.ship==='std'?'selected':''}" onclick="selShip(this,'std')"><div class="shipping-radio"></div><div><div class="shipping-name">Envío estándar</div><div class="shipping-days">3–5 días hábiles</div></div><div class="shipping-price">Gratis</div></div>
+      <div class="shipping-option ${chkData.ship==='exp'?'selected':''}" onclick="selShip(this,'exp')"><div class="shipping-radio"></div><div><div class="shipping-name">Envío express</div><div class="shipping-days">1–2 días hábiles</div></div><div class="shipping-price">$149</div></div>
+      <div class="checkout-nav"><button class="btn-secondary" onclick="chkStep=1;renderChkStep()">← Volver</button><button class="btn-primary" onclick="valStep2()">Continuar →</button></div>
+    </div>`;
+  } else {
+    const tot=cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const ship=chkData.ship==='exp'?149:0;
+    area.innerHTML=`<div class="checkout-form fade-in"><div class="checkout-form-title">Confirmar pedido</div>
+      <div class="review-data-block"><div class="review-data-title">Datos</div><div class="review-data-line">${chkData.fn} ${chkData.ln}</div><div class="review-data-line" style="color:var(--g60)">${chkData.em} · ${chkData.ph}</div></div>
+      <div class="review-data-block"><div class="review-data-title">Envío</div><div class="review-data-line">${chkData.st}, ${chkData.col}</div><div class="review-data-line" style="color:var(--g60)">C.P. ${chkData.cp}, ${chkData.cty}, ${chkData.stt}</div></div>
+      ${cart.map(i=>`<div class="order-review-item"><div class="order-review-img">${prodImg(i,30)}</div><div class="order-review-name">${i.name} ×${i.qty}</div><div class="order-review-price">$${(i.price*i.qty).toLocaleString()}</div></div>`).join('')}
+      <div style="border-top:1px solid var(--g10);padding-top:12px;margin-top:6px">
+        <div class="summary-row"><span>Subtotal</span><span>$${tot.toLocaleString()}</span></div>
+        <div class="summary-row"><span>Envío</span><span>${ship?'$'+ship:'Gratis'}</span></div>
+        <div class="summary-row total"><span>Total</span><span class="summary-total-price">$${(tot+ship).toLocaleString()}</span></div>
+      </div>
+      <div style="background:var(--g05);border:1px solid var(--g10);padding:14px;margin-top:12px">
+        <label class="form-label" style="margin-bottom:8px">Método de pago</label>
+        <div style="display:flex;gap:7px;margin-bottom:10px"><div style="background:#fff;border:2px solid var(--red);padding:5px 12px;font-size:11px;font-weight:600;cursor:pointer">Tarjeta</div><div style="background:#fff;border:1px solid var(--g10);padding:5px 12px;font-size:11px;color:var(--g60);cursor:pointer">SPEI</div><div style="background:#fff;border:1px solid var(--g10);padding:5px 12px;font-size:11px;color:var(--g60);cursor:pointer">OXXO</div></div>
+        <div style="display:grid;grid-template-columns:1fr 70px;gap:7px;margin-bottom:7px"><input class="form-input" placeholder="Número de tarjeta"><input class="form-input" placeholder="CVV"></div>
+        <input class="form-input" placeholder="Nombre en la tarjeta">
+        <div style="font-size:9px;color:var(--g40);margin-top:7px">🔒 Pago seguro. Prototipo — sin cargo real.</div>
+      </div>
+      <div class="checkout-nav"><button class="btn-secondary" onclick="chkStep=2;renderChkStep()">← Volver</button><button class="btn-primary" onclick="confirmOrder()" style="flex:1;padding:13px;font-size:14px">✓ Confirmar pedido</button></div>
+    </div>`;
+  }
+}
+function selShip(el,v){document.querySelectorAll('.shipping-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');chkData.ship=v;}
+function valStep1(){
+  let ok=true;
+  ['fn','ln','em','ph'].forEach(f=>{const el=document.getElementById(f);if(!el.value.trim()){el.classList.add('error');ok=false;}else{el.classList.remove('error');chkData[f]=el.value.trim();}});
+  if(ok){chkStep=2;renderChkStep();}
+}
+function valStep2(){
+  let ok=true;
+  ['st','col','cp','cty'].forEach(f=>{const el=document.getElementById(f);if(!el.value.trim()){el.classList.add('error');ok=false;}else{el.classList.remove('error');chkData[f]=el.value.trim();}});
+  const st=document.getElementById('stt').value;if(!st)ok=false;else chkData.stt=st;
+  if(!chkData.ship)chkData.ship='std';
+  if(ok){chkStep=3;renderChkStep();}
+}
+function confirmOrder(){
+  const num='#BSH-'+String(Math.floor(Math.random()*90000)+10000);
+  document.getElementById('ordNum').textContent=num;
+  document.getElementById('succItems').innerHTML=
+    `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--g40);margin-bottom:12px">Artículos</div>`+
+    cart.map(i=>`<div class="order-review-item"><div class="order-review-img">${prodImg(i,30)}</div><div class="order-review-name">${i.name} ×${i.qty}</div><div class="order-review-price">$${(i.price*i.qty).toLocaleString()}</div></div>`).join('');
+  cart=[];updateCartUI();nav('success');
+}
+
+/* ══════════ CHAT CROSS-SELL ENGINE ══════════ */
+let chatOpen=false,chatInitialized=false,chatContext={lastProduct:null,step:0};
+const crossSellScripts = {
+  // For each product category — conversational cross-sell flows
+  calentadores:{
+    question:'¿Para qué vas a usar principalmente tu calentador?',
+    options:[
+      {label:'Regadera y lavabo',next:'remodelacion'},
+      {label:'Cocina / fregadero',next:'cocina'},
+      {label:'Todo el departamento',next:'todo'}
+    ],
+    remodelacion:{
+      msg:'¡Perfecto! Si también planeas hacer perforaciones para la instalación, te recomiendo este taladro — muy fácil de usar para trabajo doméstico:',
+      products:['tal-1'],
+      followup:'¿Necesitas algo más para tu instalación?'
+    },
+    cocina:{
+      msg:'Para instalación en cocina puede ser útil tener una esmeriladora para ajustes de tubería o acabados. Aquí una opción básica:',
+      products:['pul-1'],
+      followup:'¿Puedo ayudarte con algo más?'
+    },
+    todo:{
+      msg:'Para cubrir todo el departamento considera también herramientas de instalación. ¿Qué tal este taladro para perforaciones?',
+      products:['tal-1'],
+      followup:'¿Alguna otra consulta?'
+    }
+  },
+  taladros:{
+    question:'¿Para qué proyecto vas a usar el taladro?',
+    options:[
+      {label:'Colgar cuadros / muebles',next:'casa'},
+      {label:'Remodelación / albañilería',next:'remo'},
+      {label:'Taller o carpintería',next:'taller'}
+    ],
+    casa:{
+      msg:'Para trabajo en casa, también podrías necesitar una esmeriladora para acabados o remates. Aquí la opción más básica:',
+      products:['pul-1'],
+      followup:'¿Algo más en que pueda ayudarte?'
+    },
+    remo:{
+      msg:'Para remodelación, una esmeriladora es casi indispensable para ajustes en metal y cemento. Te recomiendo:',
+      products:['pul-1','pul-2'],
+      followup:'¿Necesitas algún accesorio adicional?'
+    },
+    taller:{
+      msg:'Para taller, te recomiendo complementar con una esmeriladora de mayor potencia:',
+      products:['pul-2'],
+      followup:'¿Tienes más preguntas sobre tu proyecto?'
+    }
+  },
+  pulidoras:{
+    question:'¿Qué tipo de trabajo vas a realizar con la pulidora?',
+    options:[
+      {label:'Cortar o desbastar metal',next:'metal'},
+      {label:'Acabados en construcción',next:'construccion'},
+      {label:'Proyectos en casa',next:'casa'}
+    ],
+    metal:{
+      msg:'Para trabajo en metal, complementa con un taladro percutor para los montajes y fijaciones:',
+      products:['tal-2'],
+      followup:'¿Necesitas algo más para tu taller?'
+    },
+    construccion:{
+      msg:'Para construcción, un taladro percutor fuerte es esencial. Te recomiendo:',
+      products:['tal-2'],
+      followup:'¿Algo más para tu proyecto?'
+    },
+    casa:{
+      msg:'Para proyectos en casa, un taladro básico será tu gran aliado. Mira este:',
+      products:['tal-1'],
+      followup:'¿En qué más puedo ayudarte?'
+    }
+  }
+};
+
+let chatFlowState={category:null,branch:null};
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('chatPanel').classList.toggle('hidden',!chatOpen);
+  document.getElementById('chatNotif').style.display='none';
+  if(chatOpen && !chatInitialized){
+    chatInitialized=true;
+    appendBotMsg('¡Hola! 👋 Soy el asistente Bosch. Puedo ayudarte a encontrar el producto ideal o responder dudas sobre tu compra.');
+  }
+}
+
+function triggerChatCrossSell(product){
+  // Auto-open chat and start cross-sell flow when product added
+  const script=crossSellScripts[product.category];
+  if(!script) return;
+  chatFlowState={category:product.category,branch:null};
+  if(!chatOpen){
+    document.getElementById('chatNotif').style.display='flex';
+  }
+  // open chat automatically after short delay
+  setTimeout(()=>{
+    if(!chatOpen) toggleChat();
+    setTimeout(()=>{
+      // First: confirm the product was added with context
+      appendTyping();
+      setTimeout(()=>{
+        removeTyping();
+        const catEmoji={calentadores:'🔥',taladros:'🔩',pulidoras:'⚙️'}[product.category]||'✓';
+        appendBotMsg(`${catEmoji} <strong>${product.name}</strong> fue agregado a tu carrito. ¡Excelente elección!`);
+        // Then: ask the use-case question
+        setTimeout(()=>{
+          appendTyping();
+          setTimeout(()=>{
+            removeTyping();
+            appendBotMsg(`Para ayudarte a completar tu proyecto, tengo una pregunta rápida:`);
+            setTimeout(()=>{
+              appendBotMsgWithOptions(script.question, script.options.map(o=>({label:o.label, action:()=>handleChatOption(o,script,product)})));
+            },400);
+          },800);
+        },1000);
+      },1200);
+    },400);
+  },900);
+}
+
+function handleChatOption(option,script,product){
+  appendUserMsg(option.label);
+  const flow=script[option.next];
+  if(!flow) return;
+  chatFlowState.branch=option.next;
+  setTimeout(()=>{
+    appendTyping();
+    setTimeout(()=>{
+      removeTyping();
+      appendBotMsg(flow.msg);
+      // Show product suggestions
+      flow.products.forEach(pid=>{
+        const p=PRODUCTS.find(pr=>pr.id===pid);
+        if(p) appendProductSuggest(p);
+      });
+      setTimeout(()=>{
+        appendBotMsg(flow.followup);
+      },500);
+    },1000);
+  },400);
+}
+
+function appendBotMsg(html){
+  const msgs=document.getElementById('chatMsgs');
+  const div=document.createElement('div');
+  div.className='msg msg-bot';
+  div.innerHTML=`<div class="msg-bubble">${html}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function appendBotMsgWithOptions(text,options){
+  const msgs=document.getElementById('chatMsgs');
+  const div=document.createElement('div');
+  div.className='msg msg-bot';
+  div.innerHTML=`<div class="msg-bubble">${text}</div>
+    <div class="chat-options">${options.map((o,i)=>`<button class="chat-opt-btn" id="chatOpt${i}">${o.label}</button>`).join('')}</div>`;
+  msgs.appendChild(div);
+  options.forEach((o,i)=>{
+    div.querySelector('#chatOpt'+i).addEventListener('click',()=>{
+      div.querySelector('.chat-options').style.opacity='.4';
+      div.querySelector('.chat-options').style.pointerEvents='none';
+      o.action();
+    });
+  });
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function appendUserMsg(text){
+  const msgs=document.getElementById('chatMsgs');
+  const div=document.createElement('div');
+  div.className='msg msg-user';
+  div.innerHTML=`<div class="msg-bubble">${text}</div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function appendProductSuggest(p){
+  const msgs=document.getElementById('chatMsgs');
+  const div=document.createElement('div');
+  div.className='msg msg-bot';
+  div.innerHTML=`<div class="chat-prod-suggest" onclick="showProd('${p.id}')">
+    <div class="chat-prod-img">${prodImg(p,36)}</div>
+    <div style="flex:1">
+      <div class="chat-prod-name">${p.name}</div>
+      <div class="chat-prod-price">$${p.price.toLocaleString()}</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:5px">
+      <button class="chat-opt-btn" onclick="event.stopPropagation();addCart('${p.id}')" style="font-size:11px;padding:5px 10px">Al carrito</button>
+    </div>
+  </div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function appendTyping(){
+  const msgs=document.getElementById('chatMsgs');
+  const div=document.createElement('div');
+  div.id='chatTyping';div.className='msg msg-bot';
+  div.innerHTML=`<div class="chat-typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+  msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
+}
+function removeTyping(){const t=document.getElementById('chatTyping');if(t)t.remove();}
+
+function sendChatMsg(){
+  const input=document.getElementById('chatInput');
+  const txt=input.value.trim();if(!txt)return;
+  appendUserMsg(txt);input.value='';
+  // Simple rule-based responses
+  setTimeout(()=>{
+    appendTyping();
+    setTimeout(()=>{
+      removeTyping();
+      const lo=txt.toLowerCase();
+      if(lo.includes('precio')||lo.includes('costo')||lo.includes('cuánto'))
+        appendBotMsg('Los precios varían según el modelo. ¿Sobre cuál tienes duda? Puedes decirme la categoría: calentadores, taladros o pulidoras.');
+      else if(lo.includes('garantía')||lo.includes('garantia'))
+        appendBotMsg('Todos nuestros productos tienen garantía oficial Bosch: 1 a 3 años según el modelo. La garantía cubre defectos de fabricación.');
+      else if(lo.includes('envío')||lo.includes('envio')||lo.includes('entrega'))
+        appendBotMsg('Tenemos envío estándar (3–5 días, gratis en compras +$999) y express (1–2 días, $149). Hacemos envíos a todo México.');
+      else if(lo.includes('calentador'))
+        appendBotMsg('Tenemos dos calentadores: el <strong>Therm 6000</strong> para 1–2 salidas ($3,290) y el <strong>Therm 8000</strong> para 3–4 salidas simultáneas ($5,490). ¿Cuántos baños tiene tu casa?');
+      else if(lo.includes('taladro'))
+        appendBotMsg('El <strong>GSB 12V</strong> es ideal para uso doméstico ($2,490) y el <strong>GSB 18V</strong> para trabajo pesado ($5,890). ¿Para qué lo necesitas?');
+      else if(lo.includes('pulidora')||lo.includes('esmeril'))
+        appendBotMsg('La <strong>GWS 750</strong> es perfecta para uso eventual ($1,890) y la <strong>GWS 2200</strong> para trabajo continuo profesional ($4,190). ¿Es para casa o taller?');
+      else if(lo.includes('hola')||lo.includes('buenos'))
+        appendBotMsg('¡Hola! ¿En qué puedo ayudarte hoy? Puedo orientarte sobre calentadores, taladros o pulidoras Bosch.');
+      else
+        appendBotMsg('Gracias por tu pregunta. Para una recomendación personalizada te sugiero usar nuestro asistente de compra — te guía paso a paso para encontrar el producto ideal. <button class="chat-opt-btn" onclick="nav(\'assistant\')" style="margin-top:8px;font-size:12px;padding:7px 12px">Ir al asistente →</button>');
+    },900);
+  },200);
+}
+
+/* ══════════ NAVIGATION ══════════ */
+function nav(name){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  window.scrollTo(0,0);
+  if(name==='assistant'){aStep=0;aAnswers={};renderAssistant();}
+  if(name==='cart')renderCart();
+  if(name==='checkout'){renderChk();updateChkSummary();}
+}
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2600);
+}
+
+/* ══════════ INIT ══════════ */
+renderFeatured();
+renderHeroProd();
+renderCatIcons();
+renderCart();
+renderAssistant();
+renderBundles();
+startFlashTimer();
+</script>
+</body>
+</html>
